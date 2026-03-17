@@ -1,0 +1,117 @@
+/* 
+  축약어 규칙
+  cnd = Community Notice Detail (커뮤니티 공지 상세 페이지 공통 prefix)
+  top = 상단 타이틀 영역
+  ttl = title(제목)
+  mv = move button(이동 버튼)
+  pnl = panel(전체 박스)
+  head = 상단 정보 영역
+  info = 작성자/날짜/조회수 영역
+  it = item(단일 항목)
+  cont = 본문 영역
+  btm = 하단 버튼 영역
+  btn = button(버튼)
+
+  요약 기준
+  community = c
+  notice = n
+  detail = d
+  information = info
+  button = btn
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  color: black;
+  font-size: 14px;
+}
+
+.cnd-wrap {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 50px 0 80px;
+}
+
+.cnd-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.cnd-top-ttl {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.cnd-top-mv {
+  background-color: #7d84e6;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.cnd-pnl {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  background-color: white;
+  padding: 35px 30px 30px;
+}
+
+.cnd-head {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+}
+
+.cnd-head-ttl {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.cnd-head-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #666666;
+}
+
+.cnd-cont {
+  width: 100%;
+  min-height: 340px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  line-height: 1.7;
+}
+
+.cnd-btm {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.cnd-btn {
+  background-color: #7d84e6;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+}

@@ -1,0 +1,98 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일반회원 마이페이지(수정)</title>
+  <link rel="stylesheet" href="./../../../assets/css/main/mypage/mypage-member-edit.css">
+</head>
+
+<body>
+  <main>
+    <div class="main-container">
+      <div class="mypage-title">마이페이지</div>
+
+      <form action="" method="post">
+        <div class="mypage-subtitle">회원정보 변경</div>
+        <div class="main-container-section-changeinfo">
+
+          <div class="mypage-info-box">
+            <div class="mypage-info-title">전화번호</div>
+
+            <div class="mypage-input-wrap">
+              <input type="text" name="member_phonenumber" class="mypage-info-text" id="member-phonenumber">
+              <div class="input-message" id="member-phonenumber-message">test문구</div>
+            </div>
+
+            <button type="button" class="btn" id="member-phonenumber-submit-btn">전송</button>
+          </div>
+
+          <div class="mypage-info-box">
+            <div class="mypage-info-title">인증번호</div>
+
+            <div class="mypage-input-wrap">
+              <input type="text" name="member_verificationcode" class="mypage-info-text" id="member-verificationcode">
+              <div class="input-message" id="member-verificationcode-message">test문구</div>
+            </div>
+
+            <button type="button" class="btn" id="member-verificationcode-btn">확인</button>
+          </div>
+
+          <div class="mypage-button-box">
+            <button type="submit" class="btn" id="mypage-infoedit-btn">수정</button>
+            <button type="button" class="btn" id="mypage-infoeditcancel-btn">취소</button>
+          </div>
+        </div>
+      </form>
+
+      <form action="" method="post">
+        <div class="mypage-subtitle">비밀번호 변경</div>
+        <div class="main-container-section-changeinfo">
+
+          <div class="mypage-info-box">
+            <div class="mypage-info-title">현재 비밀번호</div>
+
+            <div class="mypage-input-wrap">
+              <input type="password" name="member_current_pw" class="mypage-info-text" id="member-current-pw">
+              <div class="input-message" id="member-current-pw-message"></div>
+            </div>
+            <button type="button" class="btn" id="currentpw-check-btn">확인</button>
+          </div>
+
+          <div class="mypage-info-box">
+            <div class="mypage-info-title">변경할 비밀번호</div>
+
+            <div class="mypage-input-wrap">
+              <input type="password" name="member_change_pw" class="mypage-info-text" id="member-change-pw">
+              <div class="input-message" id="member-change-pw-message"></div>
+            </div>
+          </div>
+
+          <div class="mypage-info-box">
+            <div class="mypage-info-title">변경할 비밀번호 확인</div>
+
+            <div class="mypage-input-wrap">
+              <input type="password" name="member_check_pw" class="mypage-info-text" id="member-check-pw">
+              <div class="input-message" id="member-check-pw-message">test문구</div>
+            </div>
+            <button type="button" class="btn" id="changepw-check-btn">확인</button>
+          </div>
+        </div>
+
+        <div class="mypage-button-box">
+          <button type="submit" class="btn" id="mypage-pwedit-btn">수정</button>
+          <button type="button" class="btn" id="mypage-pweditcancel-btn">취소</button>
+        </div>
+      </form>
+
+      <div class="member-quit-wrap">
+        <a href="./mypage-member-quit.html" class="btn" id="member-quit">회원탈퇴</a>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

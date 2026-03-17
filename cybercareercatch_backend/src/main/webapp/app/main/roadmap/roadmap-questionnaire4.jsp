@@ -1,0 +1,440 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>roadmap</title>
+  <link rel="stylesheet" href="./../../../assets/css/main/roadmap/roadmap-questionnaire1.css" />
+</head>
+
+<body>
+  <!--
+    Abbrev(축약어) 규칙
+    rmq = RoadMap Questionnaire (이 페이지 공통 prefix)
+    hdr = header(상단 타이틀 영역)
+    job = job cards(직무 카드 영역)
+    map = roadmap image(로드맵 이미지 영역)
+    more = 더보기 버튼 영역
+    pnl = panel(테두리 있는 박스/카드 단위)
+    frm = frame(패널 외곽 테두리)
+    box = 패널 내부 컨텐츠 박스
+    head = 패널 헤더(번호/제목 줄)
+    row = 한 줄(좌/우 또는 단일 항목)
+    colL/colR = 좌/우 컬럼
+    grid = 2열 배치 영역
+    col = grid의 컬럼
+    it = item(단일 항목)
+    ic = icon
+    img = image
+  -->
+  <div class="rmq-wrap">
+
+    <main class="rmq-hdr">
+      <div class="rmq-hdr-ic">
+        <!-- 아이콘 파일명은 프로젝트 자산명에 맞게 교체해서 사용하세요 -->
+        <img class="rmq-hdr-ic-img" src="./../../../assets/img/침해 사고 디지털 포렌식.png">
+      </div>
+
+      <div class="rmq-hdr-content">
+        <div class="rmq-hdr-titlebox">
+          <h1>침해사고/디지털 포렌식 로드맵</h1>
+          <div class="rmq-hdr-subbox">
+            <h5>
+              침해사고 발생 시 증거를 기반으로 원인과 영향을 분석하고,<br>
+              확산 차단·복구·재발방지까지 수행하며<br>
+              디지털 증거를 체계적으로 확보하는 직군입니다.
+            </h5>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main class="rmq-job">
+      <div class="rmq-job-rowtop">
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>침해사고</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                침해 징후를 분석하고 확산을 차단하며,<br>
+                복구와 재발방지 대책까지<br>
+                수행합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>디지털포렌식</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                증거를 수집·분석해 사실관계를 규명하고,<br>
+                법적·감사 대응 근거를<br>
+                확보합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>악성코드 분석</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                악성코드의 동작과 목적을 분석해,<br>
+                침해 범위와 대응 방향을<br>
+                도출합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="rmq-job-rowbottom">
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>모바일 포렌식</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                모바일 기기에서 증거를 수집·분석해,<br>
+                사건 흐름과 행위를<br>
+                확인합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>위협 인텔리전스(CTI)</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                위협 정보를 수집·분석해 조직에 공유하고,<br>
+                선제 대응 전략을<br>
+                지원합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>클라우드 포렌식/로그 조사</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                클라우드 로그와 구성 변경 이력을 분석해,<br>
+                침해 원인과 영향을<br>
+                추적합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <main class="rmq-map">
+      <img src="./../../../assets/img/침해사고 디지털포렌식 로드맵.png">
+    </main>
+
+    <main class="rmq-more">
+      <button class="btn" id="showmore">더보기 +</button>
+    </main>
+
+    <main>
+      <div class="rmq-steplist">
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <img src="./../../../assets/img/로드맵 숫자아이콘1.png" alt="">
+                <h1>기초 다지기</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>OS/파일시스템 이해</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>흔적이 남는 위치와 구조를 이해해 조사 방향을 정확히 잡는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>시간/타임라인 이해</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>이벤트 순서를 재구성해 사건 흐름을 일관되게 설명하는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>네트워크 흔적 이해</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>접속·통신 단서를 해석해 침해 경로를 추정하는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <img src="./../../../assets/img/로드맵 숫자 아이콘 2.png" alt="">
+                <h1>보안 기초 다지기</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>IR 프로세스 이해</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>탐지→분석→격리→복구→회고 흐름을 체계적으로 수행하는 기반을 만드는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>증거 보존 원칙</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>원본 보존·해시·인수인계 기록으로 무결성을 확보하는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>행위 기반 분석</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>공격자의 행위를 단위로 묶어 원인과 영향을 구조적으로 정리하는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <img src="./../../../assets/img/로드맵 숫자아이콘3.png" alt="">
+                <h1>실습</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>타임라인 구성 실습</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>로그·아티팩트를 기반으로 사건 흐름을 시간순으로 재구성하는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>증거 분석 실습</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>디스크/메모리/로그 중 한 축을 정해 핵심 흔적을 추출하는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>시나리오 대응 실습</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>계정탈취·랜섬웨어 등 사건을 가정해 대응 절차를 문서로 완성하는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <img src="./../../../assets/img/로드맵 숫자 아이콘4.png" alt="">
+                <h1>결과물</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>사고 조사 보고서</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>개요·타임라인·영향·원인·재발방지를 근거와 함께 정리한 산출물입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>포렌식 리포트</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>증거 목록과 분석 근거를 재현 가능하게 기록한 산출물입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>대응 체크리스트</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>초기 조치·보고·에스컬레이션 기준을 표준화한 산출물입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main>
+      <div class="rmq-pnl">
+        <div class="rmq-pnl-frm">
+          <div class="rmq-pnl-box">
+            <div class="rmq-pnl-head">
+              <h1>추천 기술</h1>
+            </div>
+
+            <div class="rmq-pnl-rowitwide">
+              <div class="rmq-pnl-it">
+                <h3>아티팩트/로그 기반 분석</h3>
+              </div>
+            </div>
+
+            <div class="rmq-pnl-rowitwide">
+              <div class="rmq-pnl-it">
+                <h3>타임라인 중심 조사</h3>
+              </div>
+            </div>
+
+            <div class="rmq-pnl-rowitwide">
+              <div class="rmq-pnl-it">
+                <h3>증거 기반 보고서 작성</h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main class="rmq-grid">
+
+      <div class="rmq-col">
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <h1>추천 성향</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>증거 기반 결론 도출</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>디테일에 강점</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>압박 상황에서도 침착함</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rmq-col">
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <h1>추천 자격증</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>GCIH</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>GCFA</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>CHFI</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <main>
+      <button class="btn" id="cnldjq">
+        <h1>채용공고 바로가기</h1>
+      </button>
+    </main>
+
+  </div>
+
+  
+    <script src="./../../../assets/js/main/roadmap/roadmap-questionnaire.js">
+
+    </script>
+</body>
+
+</html>

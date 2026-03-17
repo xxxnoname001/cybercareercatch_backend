@@ -1,0 +1,102 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 페이지</title>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin/community-management/qna-management.css">
+
+</head>
+
+<body class="qnaMgmt-body">
+
+    <div class="qnaMgmt-ctr">
+
+        <header class="qnaMgmt-hdr">
+
+            <div class="qnaMgmt-title">관리자 페이지</div>
+
+
+            <nav class="qnaMgmt-nav">
+                <a href="#">회원 관리</a>
+                <a href="./qna-management.html">메인 관리</a>
+                <a href="../community-management/expo-schedule.html">커뮤니티 관리</a>
+            </nav>
+
+            <button class="qnaMgmt-logout">로그아웃</button>
+
+        </header>
+
+
+        <main class="qnaMgmt-main">
+
+
+            <aside class="qna-leftbar">
+
+                <div class="qna-left-item qna-active">
+                    <a href="./qna-management.html">질의문 관리</a>
+                </div>
+
+                <div class="qna-left-item">
+                    <a href="./company-info.html">기업 정보페이지</a>
+                </div>
+
+                <div class="qna-left-item">
+                    <a href="./roadmap-management.html">로드맵 관리</a>
+                </div>
+
+            </aside>
+
+            <form>
+                <section class="qnaMgmt-ct">
+
+
+                    <div class="qnaMgmt-qItem">
+                        <h3>질문 1</h3>
+                        <input type="text">
+
+                        <div class="qnaMgmt-btnGrp">
+                            <button type="button" class="qnaMgmt-check">확인</button>
+                            <button type="button" class="qnaMgmt-edit">수정</button>
+                            <button type="button" class="qnaMgmt-cancel">취소</button>
+                        </div>
+                    </div>
+
+
+                    <div class="qnaMgmt-qItem">
+                        <h3>질문 2</h3>
+                        <input type="text">
+
+                        <div class="qnaMgmt-btnGrp">
+                            <button type="button" class="qnaMgmt-check">확인</button>
+                            <button type="button" class="qnaMgmt-edit">수정</button>
+                            <button type="button" class="qnaMgmt-cancel">취소</button>
+                        </div>
+                    </div>
+
+
+                    <div class="qnaMgmt-qItem">
+                        <h3>질문 3</h3>
+                        <input type="text">
+
+                        <div class="qnaMgmt-btnGrp">
+                            <button type="button" class="qnaMgmt-check">확인</button>
+                            <button type="button" class="qnaMgmt-edit">수정</button>
+                            <button type="button" class="qnaMgmt-cancel">취소</button>
+                        </div>
+                    </div>
+
+                </section>
+
+        </main>
+        </form>
+    </div>
+
+    <script src="../../../assets/js/admin/community-management/qna-management.js"></script>
+
+</body>
+
+</html>

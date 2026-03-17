@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberCareerCatch - 기업 QnA 목록</title>
+  <link rel="stylesheet" href="../../../assets/css/main/qna/qna-list.css" />
+</head>
+
+<body>
+  <header></header>
+  <!-- qna-list-main : 목록 메인 영역 -->
+  <main class="qna-list-main">
+    <div class="qna-list-top">
+      <h2 class="qna-list-title">기업 QnA</h2>
+      <div class="qna-list-top-actions">
+        <a href="add-qna.html" class="qna-list-search-btn qna-list-search-btn-write">글쓰기</a>
+        <select class="qna-list-sort-sel" id="sortSelect">
+          <option value="recent">최신순</option>
+          <option value="name">이름순</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- qna-list-filter : 기업 필터 드롭다운 -->
+    <div class="qna-list-filter">
+      <select class="qna-list-filter-sel" id="companyFilter">
+        <option value="">기업선택</option>
+        <option>코리아IT</option>
+        <option>회사1</option>
+        <option>회사2</option>
+        <option>회사3</option>
+        <option>회사4</option>
+      </select>
+    </div>
+
+
+    <div class="qna-list-tbl">
+      <!-- 헤더 -->
+      <div class="qna-list-tbl-row qna-list-tbl-header">
+        <div class="qna-list-tbl-num">번호</div>
+        <div class="qna-list-tbl-title">제목</div>
+        <div class="qna-list-tbl-company">기업명</div>
+        <div class="qna-list-tbl-date">작성일</div>
+        <div class="qna-list-tbl-views">조회</div>
+      </div>
+
+      <!-- 공지 -->
+      <div class="qna-list-tbl-row qna-list-tbl-notice">
+        <div class="qna-list-tbl-num">공지</div>
+        <div class="qna-list-tbl-title">공지사항</div>
+        <div class="qna-list-tbl-company">관리자</div>
+        <div class="qna-list-tbl-date">700202</div>
+        <div class="qna-list-tbl-views">1235</div>
+      </div>
+
+      <!-- JS로 채워지는 영역 -->
+      <div id="qna-tbl-body"></div>
+    </div>
+
+    <!-- qna-list-pg : 페이지네이션 (pg = pagination 축약) -->
+    <div class="qna-list-pg" id="qnaPagination"></div>
+
+    <!-- qna-list-search : 검색 영역 -->
+    <div class="qna-list-search">
+      <select class="qna-list-search-sel">
+        <option>제목</option>
+        <option>내용</option>
+        <option>작성자</option>
+      </select>
+      <input class="qna-list-search-inp" type="text" placeholder="검색할 내용을 입력하세요" id="searchInput" />
+      <button class="qna-list-search-btn" id="btnSearch">검색</button>
+
+    </div>
+  </main>
+  <script src="../../../assets/js/main/qna/qna-list.js"></script>
+</body>
+
+</html>

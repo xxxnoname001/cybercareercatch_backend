@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지사항</title>
+  <link rel="stylesheet" href="../../../assets/css/main/community/post-notification.css">
+</head>
+
+<body>
+  <!--
+    축약어 규칙
+    cnd = Community Notice Detail (커뮤니티 공지 상세 페이지 공통 prefix)
+    top = 상단 타이틀 영역
+    ttl = title(제목)
+    mv = move button(이동 버튼)
+    pnl = panel(전체 박스)
+    head = 상단 정보 영역
+    info = 작성자/날짜/조회수 영역
+    it = item(단일 항목)
+    cont = 본문 영역
+    btm = 하단 버튼 영역
+    btn = button(버튼)
+
+    요약 기준
+    community = c
+    notice = n
+    detail = d
+    information = info
+    button = btn
+  -->
+
+  <main class="cnd-wrap">
+    <div class="cnd-top">
+      <h2 class="cnd-top-ttl">공지사항</h2>
+      <a href="post-list.html" class="cnd-top-mv">자유게시판으로 이동하기</a>
+    </div>
+
+    <div class="cnd-pnl">
+      <div class="cnd-head">
+        <h3 class="cnd-head-ttl" id="cndNoticeTitle">공지 제목</h3>
+
+        <div class="cnd-head-info">
+          <span class="cnd-head-info-it" id="cndNoticeWriter">작성자: 관리자</span>
+          <span class="cnd-head-info-it" id="cndNoticeDate">| 작성일: 260308</span>
+          <span class="cnd-head-info-it" id="cndNoticeViews">| 조회수: 100</span>
+        </div>
+      </div>
+
+      <div class="cnd-cont" id="cndNoticeContent">
+        공지 내용이 여기에 표시됩니다.
+      </div>
+
+      <div class="cnd-btm">
+        <a href="post-list.html" class="cnd-btn">목록으로</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../../assets/js/main/community/notice-detail.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.qna-body {
+    background: #fff;
+}
+
+.qna-container {
+    width: 1300px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #c9cfe0;
+}
+
+/* 상단 */
+.qna-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qna-title {
+    background: #6b83d6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.qna-menu {
+    display: flex;
+    gap: 40px;
+}
+
+.qna-menu a {
+    background: #6b83d6;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.qna-menu a:hover {
+    background: #5569c1;
+}
+
+.qna-logout {
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.qna-logout:hover {
+    background: #dcdcdc;
+}
+
+/* 메인 */
+.qna-main {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.qna-main form {
+    flex: 1;
+}
+
+/* 왼쪽 메뉴 */
+.qna-leftbar {
+    width: 200px;
+    background: #adbbdb;
+    padding-top: 20px;
+}
+
+.qna-left-item {
+    padding: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+    background: #adbbdb;
+}
+
+.qna-left-item a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.qna-left-item:hover {
+    background: #949fca;
+}
+
+.qna-left-item:hover a {
+    color: white;
+}
+
+.qna-left-item.qna-active {
+    background: #8a8a8a;
+}
+
+.qna-left-item.qna-active a {
+    color: white;
+    font-weight: 700;
+}
+
+/* 오른쪽 콘텐츠 */
+.qna-content {
+    flex: 1;
+    background: white;
+    padding: 40px;
+}
+
+/* 공지 */
+.qna-notice-title {
+    margin-bottom: 20px;
+}
+
+#notice-box {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-size: 16px;
+}
+
+.qna-notice-btn {
+    width: 100%;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.qna-notice-btn button {
+    background: #6b83d6;
+    color: white;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Q&A 제목 */
+.qna-title {
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+
+.qna-filter {
+    margin-bottom: 20px;
+}
+
+.qna-filter select {
+    height: 35px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+.qna-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.qna-row {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+
+.qna-head {
+    font-weight: bold;
+    border-top: 2px solid #333;
+    background: #f1f1f1;
+}
+
+.col1 {
+    width: 80px;
+}
+
+.col2 {
+    flex: 1;
+}
+
+.col3 {
+    width: 120px;
+}
+
+.col4 {
+    width: 120px;
+}
+
+.col5 {
+    width: 80px;
+}
+
+.col6 {
+    width: 100px;
+    text-align: center;
+}
+
+
+.qna-page {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.qna-page span {
+    cursor: pointer;
+}
+
+.qna-page .active {
+    color: #4c6ef5;
+    font-weight: bold;
+}
+
+
+.qna-delete {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.qna-delete button {
+    background: #d87c7c;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}

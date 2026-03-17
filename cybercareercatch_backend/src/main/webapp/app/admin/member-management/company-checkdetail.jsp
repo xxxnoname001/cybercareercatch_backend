@@ -1,0 +1,116 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>기업 승인여부 상세</title>
+<link rel="stylesheet" href="../../../assets/css/admin/member-management/company-checkdetail.css">
+</head>
+
+<body class="company-checkdetail-body">
+
+<div class="company-checkdetail-container">
+
+<header class="company-checkdetail-header">
+
+<div class="company-checkdetail-title">
+ <a href="../admin-main.html">관리자 페이지</a>
+</div>
+
+<nav class="company-checkdetail-menu">
+<a href="../member-management/member-info.html">회원 관리</a>
+<a href="../main-management/qna-management.html">메인 관리</a>
+<a href="../community-management/expo-schedule.html">커뮤니티 관리</a>
+</nav>
+
+<button class="company-checkdetail-logout">로그아웃</button>
+
+</header>
+
+<main class="company-checkdetail-main">
+
+<aside class="company-checkdetail-sidebar">
+
+<div class="company-checkdetail-sidebar-item">
+<a href="./member-info.html">일반회원 정보 조회</a>
+</div>
+
+<div class="company-checkdetail-sidebar-item company-checkdetail-active">
+<a href="./company-check.html">기업회원 승인, 반려</a>
+</div>
+
+<div class="company-checkdetail-sidebar-item">
+<a href="./recruiter-info.html">기업회원 정보 조회</a>
+</div>
+
+</aside>
+
+
+<!-- 오른쪽 콘텐츠 영역 -->
+
+<section class="company-checkdetail-content">
+
+<div class="company-checkdetail-section">
+
+<div class="company-checkdetail-header-area">
+  <h2>기업회원 승인 및 반려</h2>
+  <!-- -----------------------------------버튼으로 해야하나 link를 달아야하나.....????------------------------- -->
+  <!-- <button class="company-checkdetail-move-btn">기업회원 승인,반려 목록 이동하기</button> -->
+   <!-- 일단 링크로 만들어보겠음..... -->
+    <a href="./company-check.html" class="company-checkdetail-move-btn">
+기업회원 승인,반려 목록 이동하기
+</a>
+</div>
+
+<p class="company-checkdetail-subtitle">신규 기업회원가입자 회원가입 정보</p>
+
+
+<!-- 정보 리스트 (table 대체) -->
+
+<div class="company-checkdetail-info">
+
+<div class="company-checkdetail-row">
+  <div class="company-checkdetail-label">아이디</div>
+  <div class="company-checkdetail-value">SsamSsong</div>
+</div>
+
+<div class="company-checkdetail-row">
+  <div class="company-checkdetail-label">기업이름</div>
+  <div class="company-checkdetail-value">쌤쏭버거</div>
+</div>
+
+<div class="company-checkdetail-row">
+  <div class="company-checkdetail-label">사업자등록번호</div>
+  <div class="company-checkdetail-value">123456789</div>
+</div>
+
+<div class="company-checkdetail-row">
+  <div class="company-checkdetail-label">채용담당자</div>
+  <div class="company-checkdetail-value">김진욱</div>
+</div>
+
+<div class="company-checkdetail-row">
+  <div class="company-checkdetail-label">채용담당자연락처</div>
+  <div class="company-checkdetail-value">01085331234</div>
+</div>
+
+</div>
+
+
+<!-- 승인/반려 버튼 -->
+
+<div class="company-checkdetail-btn-area">
+  <button class="company-checkdetail-approve">승인</button>
+  <button class="company-checkdetail-reject">반려</button>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+</body>
+</html>

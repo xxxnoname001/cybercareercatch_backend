@@ -1,0 +1,235 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>회원정보</title>
+<link rel="stylesheet" href="../../../assets/css/admin/member-management/member-info.css">
+</head>
+
+<body class="member-info-body">
+
+<div class="member-info-container">
+
+<header class="member-info-header">
+
+<div class="member-info-title">
+ <a href="../admin-main.html">관리자 페이지</a>
+</div>
+
+<nav class="member-info-menu">
+<a href="../member-management/member-info.html">회원 관리</a>
+<a href="../main-management/qna-management.html">메인 관리</a>
+<a href="../community-management/expo-schedule.html">커뮤니티 관리</a>
+</nav>
+
+<button class="member-info-logout">로그아웃</button>
+
+</header>
+
+
+<main class="member-info-main">
+
+<!-- 왼쪽 사이드바 -->
+<aside class="member-info-sidebar">
+
+<div class="member-info-sidebar-item member-info-active">
+<a href="./member-info.html">일반회원 정보 조회</a>
+</div>
+
+<div class="member-info-sidebar-item">
+<a href="./company-check.html">기업회원 승인, 반려</a>
+</div>
+
+<div class="member-info-sidebar-item">
+<a href="./recruiter-info.html">기업회원 정보 조회</a>
+</div>
+
+</aside>
+
+
+<!-- 오른쪽 콘텐츠 -->
+<section class="member-info-content">
+
+<h2 class="member-info-content-title">회원 정보 및 관리</h2>
+
+<!-- 검색 -->
+<div class="member-info-search-box">
+
+<span class="member-info-search-label">- 검색</span>
+
+<select class="member-info-search-select">
+<option>이름</option>
+<option>아이디</option>
+</select>
+
+<input type="text" class="member-info-search-input">
+
+<button class="member-info-search-btn">검색</button>
+
+</div>
+
+
+<!-- 회원 리스트 -->
+<div class="member-info-table">
+
+<!-- header -->
+<div class="member-info-table-header">
+
+<div class="member-info-col member-info-col-num">번호</div>
+<div class="member-info-col member-info-col-id">아이디</div>
+<div class="member-info-col member-info-col-name">이름</div>
+<div class="member-info-col member-info-col-manage">관리</div>
+
+</div>
+
+
+<!-- rows -->
+
+<!-- <div class="member-info-row">
+<div class="member-info-col member-info-col-num">210</div>
+<div class="member-info-col member-info-col-id">zaps00121</div>
+<div class="member-info-col member-info-col-name">김성민</div>
+<div class="member-info-col member-info-col-manage">
+<button class="member-info-delete-btn">삭제</button>
+</div>
+</div> -->
+<div class="member-info-row">
+<a href="./member-infodetail.html" class="member-info-link-group">
+<div class="member-info-col member-info-col-num">210</div>
+<div class="member-info-col member-info-col-id">zaps00121</div>
+<div class="member-info-col member-info-col-name">김성민</div>
+</a>
+<div class="member-info-col member-info-col-manage">
+<button class="member-info-delete-btn">삭제</button>
+</div>
+</div>
+
+
+
+<div class="member-info-row">
+<a href="#" class="member-info-link-group">
+<div class="member-info-col member-info-col-num">209</div>
+<div class="member-info-col member-info-col-id">dkoskd457</div>
+<div class="member-info-col member-info-col-name">김민석</div>
+</a>
+<div class="member-info-col member-info-col-manage">
+<button class="member-info-delete-btn">삭제</button>
+</div>
+</div>
+
+<div class="member-info-row">
+<a href="#" class="member-info-link-group">
+<div class="member-info-col member-info-col-num">208</div>
+<div class="member-info-col member-info-col-id">sadswo212</div>
+<div class="member-info-col member-info-col-name">김지훈</div>
+</a>
+<div class="member-info-col member-info-col-manage">
+<button class="member-info-delete-btn">삭제</button>
+</div>
+</div>
+
+<div class="member-info-row">
+<a href="#" class="member-info-link-group">
+<div class="member-info-col member-info-col-num">207</div>
+<div class="member-info-col member-info-col-id">zzdooop2122</div>
+<div class="member-info-col member-info-col-name">이지훈</div>
+</a>
+<div class="member-info-col member-info-col-manage">
+<button class="member-info-delete-btn">삭제</button>
+</div>
+</div>
+
+<div class="member-info-row">
+<a href="#" class="member-info-link-group">
+<div class="member-info-col member-info-col-num">206</div>
+<div class="member-info-col member-info-col-id">ppap2232</div>
+<div class="member-info-col member-info-col-name">이상혁</div>
+</a>
+<div class="member-info-col member-info-col-manage">
+<button class="member-info-delete-btn">삭제</button>
+</div>
+</div>
+
+<div class="member-info-row">
+<a href="#" class="member-info-link-group">
+<div class="member-info-col member-info-col-num">205</div>
+<div class="member-info-col member-info-col-id">zzdkk223</div>
+<div class="member-info-col member-info-col-name">손흥민</div>
+</a>
+<div class="member-info-col member-info-col-manage">
+<button class="member-info-delete-btn">삭제</button>
+</div>
+</div>
+
+<div class="member-info-row">
+<a href="#" class="member-info-link-group">
+<div class="member-info-col member-info-col-num">204</div>
+<div class="member-info-col member-info-col-id">zdjjjj122</div>
+<div class="member-info-col member-info-col-name">김민아</div>
+</a>
+<div class="member-info-col member-info-col-manage">
+<button class="member-info-delete-btn">삭제</button>
+</div>
+</div>
+
+<div class="member-info-row">
+<a href="#" class="member-info-link-group">
+<div class="member-info-col member-info-col-num">203</div>
+<div class="member-info-col member-info-col-id">qese2232</div>
+<div class="member-info-col member-info-col-name">변준호</div>
+</a>
+<div class="member-info-col member-info-col-manage">
+<button class="member-info-delete-btn">삭제</button>
+</div>
+</div>
+
+<div class="member-info-row">
+<a href="#" class="member-info-link-group">
+<div class="member-info-col member-info-col-num">202</div>
+<div class="member-info-col member-info-col-id">illdl2232</div>
+<div class="member-info-col member-info-col-name">고길동</div>
+</a>
+<div class="member-info-col member-info-col-manage">
+<button class="member-info-delete-btn">삭제</button>
+</div>
+</div>
+
+<div class="member-info-row">
+<a href="#" class="member-info-link-group">
+<div class="member-info-col member-info-col-num">201</div>
+<div class="member-info-col member-info-col-id">ksm92313</div>
+<div class="member-info-col member-info-col-name">이재용</div>
+</a>
+<div class="member-info-col member-info-col-manage">
+<button class="member-info-delete-btn">삭제</button>
+</div>
+</div>
+
+
+<!-- 페이지네이션 -->
+
+<div class="member-info-pagination">
+
+<!-- <span>&lt;&lt;</span> -->
+<span>&lt;</span>
+
+<a class="member-info-page member-info-page-active">1</a>
+<a class="member-info-page">2</a>
+<a class="member-info-page">3</a>
+<a class="member-info-page">4</a>
+<a class="member-info-page">5</a>
+
+<span>&gt;</span>
+<!-- <span>&gt;&gt;</span> -->
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+</body>
+</html>

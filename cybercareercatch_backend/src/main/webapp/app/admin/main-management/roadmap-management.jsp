@@ -1,0 +1,195 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 페이지</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin/main-management/roadmap-management.css">
+</head>
+
+<body class="rm-body">
+
+    <div class="rm-container">
+
+        <main class="rm-main">
+
+
+            <aside class="rm-leftbar">
+
+                <div class="rm-left-item"><a href="./qna-management.html">질의문 관리</a></div>
+                <div class="rm-left-item"><a href="./company-info.html">기업 정보페이지</a></div>
+                <div class="rm-left-item rm-active"><a href="./roadmap-management.html">로드맵 관리</a> </div>
+
+            </aside>
+
+
+            <section class="rm-content">
+
+                <form>
+
+
+                    <div class="rm-tabmenu">
+                        <a href="#">침해사고/디지털포렌식</a>
+                        <a href="#">보안관제</a>
+                        <a href="#">보안컨설팅</a>
+                        <a href="#">시스템/네트워크 엔지니어</a>
+                    </div>
+
+
+                    <div class="rm-img">
+                        <label>이미지</label>
+                        <input type="text">
+                        <button type="button" class="rm-upload-btn">업로드</button>
+                    </div>
+
+
+                    <div class="rm-sec100">
+
+                        <div><label>직군 이름</label><input></div>
+                        <div><label>이름 설명</label><input></div>
+
+                        <h3>직업</h3>
+
+                        <div><label>직업1</label><input></div>
+                        <div><label>직업1 설명</label><input></div>
+
+                        <div><label>직업2</label><input></div>
+                        <div><label>직업2 설명</label><input></div>
+
+                        <div><label>직업3</label><input></div>
+                        <div><label>직업3 설명</label><input></div>
+
+                        <div><label>직업4</label><input></div>
+                        <div><label>직업4 설명</label><input></div>
+
+                        <div><label>직업5</label><input></div>
+                        <div><label>직업5 설명</label><input></div>
+
+                        <div><label>직업6</label><input></div>
+                        <div><label>직업6 설명</label><input></div>
+
+                    </div>
+
+
+                    <div class="rm-sec200">
+
+                        <h3>1. 기초 다지기</h3>
+
+                        <div><label>내용1</label><input></div>
+                        <div><label>내용1 설명</label><input></div>
+
+                        <div><label>내용2</label><input></div>
+                        <div><label>내용2 설명</label><input></div>
+
+                        <div><label>내용3</label><input></div>
+                        <div><label>내용3 설명</label><input></div>
+
+                    </div>
+
+
+                    <div class="rm-sec300">
+
+                        <h3>2. 보안 기초 다지기</h3>
+
+                        <div><label>내용1</label><input></div>
+                        <div><label>내용1 설명</label><input></div>
+
+                        <div><label>내용2</label><input></div>
+                        <div><label>내용2 설명</label><input></div>
+
+                        <div><label>내용3</label><input></div>
+                        <div><label>내용3 설명</label><input></div>
+
+                    </div>
+
+
+                    <div class="rm-sec400">
+
+                        <h3>3. 실습</h3>
+
+                        <div><label>내용1</label><input></div>
+                        <div><label>내용1 설명</label><input></div>
+
+                        <div><label>내용2</label><input></div>
+                        <div><label>내용2 설명</label><input></div>
+
+                        <div><label>내용3</label><input></div>
+                        <div><label>내용3 설명</label><input></div>
+
+                    </div>
+
+
+                    <div class="rm-sec500">
+
+                        <h3>4. 결과물</h3>
+
+                        <div><label>내용1</label><input></div>
+                        <div><label>내용1 설명</label><input></div>
+
+                        <div><label>내용2</label><input></div>
+                        <div><label>내용2 설명</label><input></div>
+
+                        <div><label>내용3</label><input></div>
+                        <div><label>내용3 설명</label><input></div>
+
+                    </div>
+
+
+                    <div class="rm-sec600">
+
+                        <h3>추천 기술</h3>
+
+                        <div><label>내용1</label><input></div>
+                        <div><label>내용2</label><input></div>
+                        <div><label>내용3</label><input></div>
+                        <div><label>내용4</label><input></div>
+                        <div><label>내용5</label><input></div>
+                        <div><label>내용6</label><input></div>
+                        <div><label>내용7</label><input></div>
+
+                    </div>
+
+
+                    <div class="rm-sec700">
+
+                        <h3>추천 성향</h3>
+
+                        <div><label>내용1</label><input></div>
+                        <div><label>내용2</label><input></div>
+                        <div><label>내용3</label><input></div>
+                        <div><label>내용4</label><input></div>
+
+                    </div>
+
+
+                    <div class="rm-sec800">
+
+                        <h3>추천 자격증</h3>
+
+                        <div><label>내용1</label><input></div>
+                        <div><label>내용2</label><input></div>
+                        <div><label>내용3</label><input></div>
+                        <div><label>내용4</label><input></div>
+
+                    </div>
+
+                    <div class="rm-buttons">
+                        <button class="rm-btn1">확인</button>
+                        <button class="rm-btn2">수정</button>
+                        <button type="reset" class="rm-btn3">취소</button>
+                    </div>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="${pageContext.request.contextPath}/assets/js/admin/main-management/roadmap-management.js"></script>
+</body>
+
+</html>

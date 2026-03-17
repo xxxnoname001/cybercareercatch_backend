@@ -1,0 +1,77 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자유게시판 글쓰기</title>
+  <link rel="stylesheet" href="../../../assets/css/main/community/add-post.css">
+</head>
+
+<body>
+  <!--
+    축약어 규칙
+    cmw = Community Write (커뮤니티 글쓰기 페이지 공통 prefix)
+    top = 상단 타이틀 영역
+    ttl = title(제목)
+    mv = move button(이동 버튼)
+    pnl = panel(전체 박스)
+    frm = form(입력 폼 영역)
+    row = 한 줄 영역
+    lbl = label(라벨)
+    inp = input(입력창)
+    ta = textarea(내용 입력창)
+    btm = 하단 버튼 영역
+    btn = button(버튼)
+
+    요약 기준
+    community = cm
+    write = w
+    form = frm
+    input = inp
+    textarea = ta
+    button = btn
+  -->
+
+  <main class="cmw-wrap">
+    <div class="cmw-top">
+      <h2 class="cmw-top-ttl">자유게시판</h2>
+      <a href="post-list.html" class="cmw-top-mv">자유게시판으로 이동</a>
+    </div>
+
+    <div class="cmw-pnl">
+      <form action="#" method="post" class="cmw-frm">
+        <div class="cmw-row">
+          <label class="cmw-lbl" for="postTitle">제목</label>
+          <input
+            type="text"
+            id="postTitle"
+            name="postTitle"
+            class="cmw-inp"
+            placeholder="게시글 제목을 입력해주세요."
+          >
+        </div>
+
+        <div class="cmw-row">
+          <label class="cmw-lbl" for="postContent">내용</label>
+          <textarea
+            id="postContent"
+            name="postContent"
+            class="cmw-ta"
+            placeholder="자유롭게 내용을 입력하세요"
+          ></textarea>
+        </div>
+
+        <div class="cmw-btm">
+          <button type="submit" class="cmw-btn" id="savePostBtn">등록완료</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="../../../assets/js/main/community/add-qna.js"></script>
+</body>
+
+</html>

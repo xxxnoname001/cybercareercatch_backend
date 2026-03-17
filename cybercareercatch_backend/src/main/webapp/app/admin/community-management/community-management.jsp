@@ -1,0 +1,181 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 페이지</title>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin/community-management/community-management.css"/>
+
+</head>
+
+<body class="qnaMgmt-body">
+
+    <div class="qnaMgmt-ctr">
+
+        <header class="qnaMgmt-hdr">
+
+            <div class="qnaMgmt-title">관리자 페이지</div>
+
+            <nav class="qnaMgmt-nav">
+                <a href="../member-management/member-info.html">회원 관리</a>
+                <a href="./qna-management.html">메인 관리</a>
+                <a href="../community-management/expo-schedule.html">커뮤니티 관리</a>
+            </nav>
+
+            <button type="button" class="qnaMgmt-logout">로그아웃</button>
+
+        </header>
+
+
+        <main class="qnaMgmt-main">
+
+            <aside class="qna-leftbar">
+                <div class="qna-left-item"><a href="./expo-schedule.html">박람회 일정</a></div>
+                <div class="qna-left-item qna-active"><a href="./community-management.html">자유 게시판</a></div>
+                <div class="qna-left-item"><a href="./company-qna.html">기업 QnA</a></div>
+            </aside>
+
+
+            <form>
+
+                <section class="qnaMgmt-ct">
+
+                    <h2 class="qnaMgmt-noticeTitle">자유게시판 공지</h2>
+
+                    <div class="qnaMgmt-noticeBox" tabindex="0"></div>
+
+                    <div class="qnaMgmt-noticeBtn">
+                        <button type="button" class="qnaMgmt-noticeEdit">수정</button>
+                    </div>
+
+
+                    <h2 class="qnaMgmt-boardTitle">자유게시판 관리</h2>
+
+                    <div class="qnaMgmt-table">
+
+                        <div class="qnaMgmt-row qnaMgmt-head">
+                            <div class="col1">번호</div>
+                            <div class="col2">제목</div>
+                            <div class="col3">ID</div>
+                            <div class="col4">작성일</div>
+                            <div class="col5">삭제여부</div>
+                        </div>
+
+
+                        <div class="qnaMgmt-row">
+                            <div class="col1">129</div>
+                            <div class="col2"><a href="#">“충격” 김진욱, 머리피다!!!</a></div>
+                            <div class="col3">kjo8579</div>
+                            <div class="col4">260310</div>
+                            <div class="col5"><input type="checkbox"></div>
+                        </div>
+
+                        <div class="qnaMgmt-row">
+                            <div class="col1">128</div>
+                            <div class="col2">김태우, 내 피그마 그만 훔쳐봐라</div>
+                            <div class="col3">abbbb</div>
+                            <div class="col4">260309</div>
+                            <div class="col5"><input type="checkbox"></div>
+                        </div>
+
+                        <div class="qnaMgmt-row">
+                            <div class="col1">127</div>
+                            <div class="col2">이해준, 그만 클럽가려고 병원다녀와라.</div>
+                            <div class="col3">cccccc</div>
+                            <div class="col4">260308</div>
+                            <div class="col5"><input type="checkbox"></div>
+                        </div>
+
+                        <div class="qnaMgmt-row">
+                            <div class="col1">126</div>
+                            <div class="col2">삶은, 계란인 이유는?</div>
+                            <div class="col3">ccasdasdcc</div>
+                            <div class="col4">260308</div>
+                            <div class="col5"><input type="checkbox"></div>
+                        </div>
+
+                        <div class="qnaMgmt-row">
+                            <div class="col1">125</div>
+                            <div class="col2">삶은, 계란인 이유는?</div>
+                            <div class="col3">ccascc</div>
+                            <div class="col4">260308</div>
+                            <div class="col5"><input type="checkbox"></div>
+                        </div>
+
+                        <div class="qnaMgmt-row">
+                            <div class="col1">124</div>
+                            <div class="col2">삶은, 계란인 이유는?</div>
+                            <div class="col3">ccasdasdcc</div>
+                            <div class="col4">260308</div>
+                            <div class="col5"><input type="checkbox"></div>
+                        </div>
+
+                        <div class="qnaMgmt-row">
+                            <div class="col1">123</div>
+                            <div class="col2">삶은, 계란인 이유는?</div>
+                            <div class="col3">ccasdasdcc</div>
+                            <div class="col4">260308</div>
+                            <div class="col5"><input type="checkbox"></div>
+                        </div>
+
+                        <div class="qnaMgmt-row">
+                            <div class="col1">122</div>
+                            <div class="col2">삶은, 계란인 이유는?</div>
+                            <div class="col3">ccasdasdcc</div>
+                            <div class="col4">260308</div>
+                            <div class="col5"><input type="checkbox"></div>
+                        </div>
+
+                        <div class="qnaMgmt-row">
+                            <div class="col1">121</div>
+                            <div class="col2">삶은, 계란인 이유는?</div>
+                            <div class="col3">ccasdasdcc</div>
+                            <div class="col4">260308</div>
+                            <div class="col5"><input type="checkbox"></div>
+                        </div>
+
+                        <div class="qnaMgmt-row">
+                            <div class="col1">120</div>
+                            <div class="col2">삶은, 계란인 이유는?</div>
+                            <div class="col3">ccasdasdcc</div>
+                            <div class="col4">260308</div>
+                            <div class="col5"><input type="checkbox"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="qnaMgmt-page">
+
+                        <span>&lt;&lt;</span>
+                        <span>&lt;</span>
+                        <span class="active">1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>&gt;</span>
+                        <span>&gt;&gt;</span>
+
+                    </div>
+
+
+                    <div class="qnaMgmt-del">
+                        <button type="button" class="qnaMgmt-delBtn">삭제</button>
+                    </div>
+
+                </section>
+
+            </form>
+
+        </main>
+    </div>
+
+    <script src="${pageContext.request.contextPath}/assets/js/admin/community-management/community-management.js"></script>
+
+</body>
+
+</html>

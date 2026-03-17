@@ -1,0 +1,180 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기업회원마이페이지</title>
+  <link rel="stylesheet" href="../../../assets/css/main/mypage/mypage-company.css">
+</head>
+
+<body>
+  <main>
+    <div class="main-container">
+      <div class="mypage-title">마이페이지</div>
+
+      <div class="mypage-section">
+        <div class="mypage-subtitle">기업정보 조회</div>
+        <div class="main-container-section-changeinfo">
+          <div class="mypage-info-box">
+            <div class="mypage-info-title">아이디</div>
+            <div name="company_id" class="mypage-info-text" id="company-id">id1234</div>
+          </div>
+
+          <div class="mypage-info-box">
+            <div class="mypage-info-title">기업명</div>
+            <div name="company_name" class="mypage-info-text" id="company-name">IT솔리드</div>
+          </div>
+
+          <div class="mypage-info-box">
+            <div class="mypage-info-title">사업자등록번호</div>
+            <div name="company_number" class="mypage-info-text" id="company-number">12345678</div>
+          </div>
+
+          <div class="mypage-info-box">
+            <div class="mypage-info-title">기업 주소</div>
+            <div name="company_address" class="mypage-info-text" id="company-address">서울시 강남구</div>
+          </div>
+
+          <div class="mypage-info-box">
+            <div class="mypage-info-title">채용담당자 이름</div>
+            <div name="company_manager_name" class="mypage-info-text" id="company-manager-name">홍길동</div>
+          </div>
+
+          <div class="mypage-info-box">
+            <div class="mypage-info-title">채용담당자 연락처</div>
+            <div name="company_manager_phonenumber" class="mypage-info-text" id="company-manager-phonenumber">
+              010-0000-0000
+            </div>
+            <a href="./company-password-check.html" class="btn" id="company-phonenumber-submit-btn">회원정보수정</a>
+          </div>
+
+          <div class="mypage-button-box">
+            <a href="./mypage-company-edit-jobposting.html" class="btn" id="mypage-editinfopage-btn">기업정보페이지 등록/수정</a>
+          </div>
+        </div>
+
+        <div class="mypage-section-QnAlist">
+          <div class="mypage-subtitle">Q&A 리스트</div>
+
+          <ul class="mypage-QnAlist">
+            <li class="mypage-QnAlist-header">
+              <div class="no">번호</div>
+              <div class="QnAlist-title">제목</div>
+              <div class="companyname">기업명</div>
+              <div class="writer">작성자</div>
+              <div class="date">날짜</div>
+              <div class="answer-status">답변상태</div>
+            </li>
+
+            <li class="mypage-QnAlist-content">
+              <div class="no">10</div>
+              <a href="./../qna/qna-detail.html" class="QnAlist-title">제목</a>
+              <div class="companyname">구글</div>
+              <div class="writer">id1111</div>
+              <div class="date">2026.03.09</div>
+              <div class="answer-status answer-status-active">답변완료</div>
+            </li>
+
+            <li class="mypage-QnAlist-content">
+              <div class="no">9</div>
+              <a href="./../qna/qna-detail.html" class="QnAlist-title">제목</a>
+              <div class="companyname">구글</div>
+              <div class="writer">id1111</div>
+              <div class="date">2026.03.09</div>
+              <div class="answer-status answer-status-active">답변완료</div>
+            </li>
+
+            <li class="mypage-QnAlist-content">
+              <div class="no">8</div>
+              <a href="./../qna/qna-detail.html" class="QnAlist-title">제목</a>
+              <div class="companyname">구글</div>
+              <div class="writer">id1111</div>
+              <div class="date">2026.03.09</div>
+              <div class="answer-status answer-status-active">답변완료</div>
+            </li>
+
+            <li class="mypage-QnAlist-content">
+              <div class="no">7</div>
+              <a href="./../qna/qna-detail.html" class="QnAlist-title">제목</a>
+              <div class="companyname">구글</div>
+              <div class="writer">id1111</div>
+              <div class="date">2026.03.09</div>
+              <div class="answer-status answer-status-active">답변완료</div>
+            </li>
+
+            <li class="mypage-QnAlist-content">
+              <div class="no">6</div>
+              <a href="./../qna/qna-detail.html" class="QnAlist-title">제목</a>
+              <div class="companyname">구글</div>
+              <div class="writer">id1111</div>
+              <div class="date">2026.03.09</div>
+              <div class="answer-status answer-status-active">답변완료</div>
+            </li>
+
+            <li class="mypage-QnAlist-content">
+              <div class="no">5</div>
+              <a href="./../qna/qna-detail.html" class="QnAlist-title">제목</a>
+              <div class="companyname">구글</div>
+              <div class="writer">id1111</div>
+              <div class="date">2026.03.09</div>
+              <div class="answer-status answer-status-active">답변완료</div>
+            </li>
+
+            <li class="mypage-QnAlist-content">
+              <div class="no">4</div>
+              <a href="./../qna/qna-detail.html" class="QnAlist-title">제목</a>
+              <div class="companyname">구글</div>
+              <div class="writer">id1111</div>
+              <div class="date">2026.03.09</div>
+              <div class="answer-status answer-status-active">답변완료</div>
+            </li>
+
+            <li class="mypage-QnAlist-content">
+              <div class="no">3</div>
+              <a href="./../qna/qna-detail.html" class="QnAlist-title">제목</a>
+              <div class="companyname">구글</div>
+              <div class="writer">id1111</div>
+              <div class="date">2026.03.09</div>
+              <div class="answer-status answer-status-active">답변완료</div>
+            </li>
+
+            <li class="mypage-QnAlist-content">
+              <div class="no">2</div>
+              <a href="./../qna/qna-detail.html" class="QnAlist-title">제목</a>
+              <div class="companyname">구글</div>
+              <div class="writer">id1111</div>
+              <div class="date">2026.03.09</div>
+              <div class="answer-status">답변대기</div>
+            </li>
+
+            <li class="mypage-QnAlist-content">
+              <div class="no">1</div>
+              <a href="./../qna/qna-detail.html" class="QnAlist-title">제목</a>
+              <div class="companyname">구글</div>
+              <div class="writer">id1111</div>
+              <div class="date">2026.03.09</div>
+              <div class="answer-status">답변대기</div>
+            </li>
+          </ul>
+
+          <div class="mypage-QnAlist-bottom">
+            <div class="mypage-pagination">
+              <button type="button" class="page-btn page-arrow">&lt;</button>
+              <button type="button" class="page-btn">1</button>
+              <button type="button" class="page-btn">2</button>
+              <button type="button" class="page-btn">3</button>
+              <button type="button" class="page-btn">4</button>
+              <button type="button" class="page-btn">5</button>
+              <button type="button" class="page-btn page-arrow">&gt;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

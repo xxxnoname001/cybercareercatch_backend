@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일반회원마이페이지-비밀번호확인</title>
+  <link rel="stylesheet" href="./../../../assets/css/main/mypage/member-password-check.css">
+</head>
+
+<body>
+  <main>
+    <div class="main-container">
+      <div class="mypage-title">마이페이지</div>
+      <div class="main-session">
+        <div class="mypageedit-subtitle">개인 정보 변경을 위해 비밀번호를 입력하세요</div>
+        <input type="password" class="mypageedit-inputpw" placeholder="비밀번호 입력">
+        <div class="pw-error" id="pwError" aria-live="polite">비밀번호가 일치하지 않습니다.</div>
+        <div class="btn-box">
+          <button class="btn" id="confirm">확인</button>
+          <a href="./mypage-member.html" class="btn" id="return">돌아가기</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+
+</body>
+
+</html>

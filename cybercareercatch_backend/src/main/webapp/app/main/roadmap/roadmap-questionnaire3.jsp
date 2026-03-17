@@ -1,0 +1,440 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>roadmap</title>
+  <link rel="stylesheet" href="./../../../assets/css/main/roadmap/roadmap-questionnaire1.css" />
+</head>
+
+<body>
+  <!--
+    Abbrev(축약어) 규칙
+    rmq = RoadMap Questionnaire (이 페이지 공통 prefix)
+    hdr = header(상단 타이틀 영역)
+    job = job cards(직무 카드 영역)
+    map = roadmap image(로드맵 이미지 영역)
+    more = 더보기 버튼 영역
+    pnl = panel(테두리 있는 박스/카드 단위)
+    frm = frame(패널 외곽 테두리)
+    box = 패널 내부 컨텐츠 박스
+    head = 패널 헤더(번호/제목 줄)
+    row = 한 줄(좌/우 또는 단일 항목)
+    colL/colR = 좌/우 컬럼
+    grid = 2열 배치 영역
+    col = grid의 컬럼
+    it = item(단일 항목)
+    ic = icon
+    img = image
+  -->
+  <div class="rmq-wrap">
+
+    <main class="rmq-hdr">
+      <div class="rmq-hdr-ic">
+        <!-- 아이콘 파일명은 프로젝트 자산명에 맞게 교체해서 사용하세요 -->
+        <img class="rmq-hdr-ic-img" src="./../../../assets/img/보안관제.png" alt="">
+      </div>
+
+      <div class="rmq-hdr-content">
+        <div class="rmq-hdr-titlebox">
+          <h1>보안관제 로드맵</h1>
+          <div class="rmq-hdr-subbox">
+            <h5>
+              다양한 보안 로그와 이벤트를 실시간으로 분석해 이상 징후를 탐지하고,<br>
+              초기 대응과 확산 차단을 수행해<br>
+              조직의 보안 사고 가능성을 낮추는 직군입니다.
+            </h5>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main class="rmq-job">
+      <div class="rmq-job-rowtop">
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>방화벽</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                네트워크 트래픽을 정책 기반으로 통제하고,<br>
+                변경·예외 관리를 통해<br>
+                위협을 차단합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>솔루션</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                IDS/IPS/EDR 등 보안 솔루션을 운영하며,<br>
+                정책 튜닝과 경보 품질 개선을<br>
+                수행합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>웹방화벽(WAF)</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                웹 공격을 탐지·차단하고,<br>
+                오탐·미탐을 조정해<br>
+                서비스 안정성을 유지합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="rmq-job-rowbottom">
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>로그분석</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                다양한 로그를 분석해 이상 징후를 판단하고,<br>
+                원인·영향·조치 방향을<br>
+                정리합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>SIEM 운영/튜닝</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                로그를 수집·정규화하고 탐지 룰을 운영해,<br>
+                탐지 정확도와 커버리지를<br>
+                개선합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-job-card">
+          <div class="rmq-job-cardin">
+            <div class="rmq-job-cardttl">
+              <h3>SOC 분석가</h3>
+            </div>
+            <div class="rmq-job-carddesc">
+              <h5>
+                관제 경보를 분류·분석하고 1차 대응을 수행하며,<br>
+                필요 시 에스컬레이션을<br>
+                진행합니다.
+              </h5>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <main class="rmq-map">
+      <img src="./../../../assets/img/보안관제 로드맵.png" alt="">
+    </main>
+
+    <main class="rmq-more">
+      <button class="btn" id="showmore">더보기 +</button>
+    </main>
+
+    <main>
+      <div class="rmq-steplist">
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <img src="./../../../assets/img/로드맵 숫자아이콘1.png" alt="">
+                <h1>기초 다지기</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>네트워크 이해</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>정상 트래픽과 비정상 패턴을 구분해 분석의 기준선을 만드는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>로그 이해</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>시간·계정·IP·행위 필드를 해석해 사건 단서를 읽는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>검색/쿼리</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>검색 문법과 필터링을 익혀 필요한 이벤트를 빠르게 추출하는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <img src="./../../../assets/img/로드맵 숫자 아이콘 2.png" alt="">
+                <h1>보안 기초 다지기</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>공격 흐름 이해</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>공격 단계별로 어떤 징후가 남는지 시나리오로 정리하는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>탐지 개념</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>IOC와 행위 기반 탐지를 구분하고 룰 설계 기준을 세우는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>대응 프로세스</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>분류→초기 조치→에스컬레이션→보고 흐름을 표준화하는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <img src="./../../../assets/img/로드맵 숫자아이콘3.png" alt="">
+                <h1>실습</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>로그 수집/정규화 실습</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>표준 포맷으로 로그를 정리해 검색 가능성을 확보하는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>탐지 룰 작성 실습</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>시나리오별 조건·예외를 설계해 오탐을 줄이는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>오탐 튜닝 실습</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>경보 원인을 분석해 조건을 개선하고 품질을 높이는 단계입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <img src="./../../../assets/img/로드맵 숫자 아이콘4.png" alt="">
+                <h1>결과물</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>탐지 룰 세트</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>룰·근거 로그·예외 조건을 함께 정리한 산출물입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>대응 플레이북</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>유형별 1차 대응 절차와 판단 기준을 표준화한 산출물입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-coll">
+                  <h3>관제 리포트</h3>
+                </div>
+                <div class="rmq-pnl-colr">
+                  <h3>주요 이슈·조치·추세를 정량·정성으로 요약한 산출물입니다.</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main>
+      <div class="rmq-pnl">
+        <div class="rmq-pnl-frm">
+          <div class="rmq-pnl-box">
+            <div class="rmq-pnl-head">
+              <h1>추천 기술</h1>
+            </div>
+
+            <div class="rmq-pnl-rowitwide">
+              <div class="rmq-pnl-it">
+                <h3>로그 분석 및 쿼리</h3>
+              </div>
+            </div>
+
+            <div class="rmq-pnl-rowitwide">
+              <div class="rmq-pnl-it">
+                <h3>SIEM 운영 및 룰 튜닝</h3>
+              </div>
+            </div>
+
+            <div class="rmq-pnl-rowitwide">
+              <div class="rmq-pnl-it">
+                <h3>네트워크 기반 분석</h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main class="rmq-grid">
+
+      <div class="rmq-col">
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <h1>추천 성향</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>반복 개선에 강점</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>패턴 탐지 선호</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>긴급 상황 대응력</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rmq-col">
+        <div class="rmq-pnl">
+          <div class="rmq-pnl-frm">
+            <div class="rmq-pnl-box">
+              <div class="rmq-pnl-head">
+                <h1>추천 자격증</h1>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>Security+</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>CySA+</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row">
+                <div class="rmq-pnl-it">
+                  <h3>GCIA</h3>
+                </div>
+              </div>
+
+              <div class="rmq-pnl-row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <main>
+      <button class="btn" id="cnldjq">
+        <h1>채용공고 바로가기</h1>
+      </button>
+    </main>
+
+  </div>
+
+  
+    <script src="./../../../assets/js/main/roadmap/roadmap-questionnaire.js">
+
+    </script>
+</body>
+
+</html>

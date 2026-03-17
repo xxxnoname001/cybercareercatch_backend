@@ -1,0 +1,441 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadmap</title>
+    <link rel="stylesheet" href="./../../../assets/css/main/roadmap/roadmap-questionnaire1.css" />
+</head>
+
+<body>
+    <!--
+      Abbrev(축약어) 규칙
+      rmq = RoadMap Questionnaire (이 페이지 공통 prefix)
+      hdr = header(상단 타이틀 영역)
+      job = job cards(직무 카드 영역)
+      map = roadmap image(로드맵 이미지 영역)
+      more = 더보기 버튼 영역
+      pnl = panel(테두리 있는 박스/카드 단위)
+      frm = frame(패널 외곽 테두리)
+      box = 패널 내부 컨텐츠 박스
+      head = 패널 헤더(번호/제목 줄)
+      row = 한 줄(좌/우 또는 단일 항목)
+      colL/colR = 좌/우 컬럼
+      grid = 2열 배치 영역
+      col = grid의 컬럼
+      it = item(단일 항목)
+      ic = icon
+      img = image
+    -->
+    <div class="rmq-wrap">
+
+        <main class="rmq-hdr">
+            <div class="rmq-hdr-ic">
+                <!-- 아이콘 파일명은 프로젝트 자산명에 맞게 교체해서 사용하세요 -->
+                <img class="rmq-hdr-ic-img" src="./../../../assets/img/시스템 네트워크 엔지니어 마크.png" alt="">
+            </div>
+
+            <div class="rmq-hdr-content">
+                <div class="rmq-hdr-titlebox">
+                    <h1>시스템/네트워크 엔지니어 로드맵</h1>
+                    <div class="rmq-hdr-subbox">
+                        <h5>
+                            서버·네트워크·클라우드 등 인프라를 설계·구축·운영하며,<br>
+                            성능·장애·보안 이슈를 안정적으로 관리해<br>
+                            서비스 가용성을 유지하는 직군입니다.
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <main class="rmq-job">
+            <div class="rmq-job-rowtop">
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>시스템 엔지니어</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                서버 구축·운영·장애 대응을 수행하며,<br>
+                                안정적인 서비스 환경을<br>
+                                유지합니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>네트워크 엔지니어</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                네트워크 설계·구성·운영을 담당하며,<br>
+                                트래픽 흐름과 장애 원인을 분석해<br>
+                                안정성을 확보합니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>보안엔지니어</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                인프라 보안 설정과 정책을 적용하고,<br>
+                                취약점과 위험 요소를 점검·개선해<br>
+                                보안 수준을 강화합니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="rmq-job-rowbottom">
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>클라우드 엔지니어</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                클라우드 인프라를 설계·운영하고,<br>
+                                비용·성능·가용성을 고려해 환경을<br>
+                                최적화합니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>DevOps/SRE 엔지니어</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                배포 자동화와 운영 안정화를 수행하며,<br>
+                                장애 대응과 품질 개선을<br>
+                                체계화합니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>플랫폼 엔지니어</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                표준 인프라 플랫폼을 구축해 개발팀에 제공하고,<br>
+                                운영 효율과 일관성을<br>
+                                높입니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <main class="rmq-map">
+            <img src="./../../../assets/img/시스템네트워크 엔지니어 로드맵.png" alt="">
+        </main>
+
+        <main class="rmq-more">
+            <button class="btn" id="showmore">더보기 +</button>
+        </main>
+
+        <main>
+            <div class="rmq-steplist">
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <img src="./../../../assets/img/로드맵 숫자아이콘1.png" alt="">
+                                <h1>기초 다지기</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>OS 기초</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>Linux/Windows 계정·권한·서비스 동작을 이해해 운영 기반을 갖추는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>네트워크 기초</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>IP·DNS·라우팅·HTTP를 이해해 장애 원인을 구간별로 추적하는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>자동화 기초</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>쉘/Python으로 반복 작업을 자동화해 운영 품질과 속도를 높이는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <img src="./../../../assets/img/로드맵 숫자 아이콘 2.png" alt="">
+                                <h1>보안 기초 다지기</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>접근통제</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>최소권한·권한 분리·접근 기록을 적용해 계정 기반 위험을 줄이는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>패치/설정 관리</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>변경관리 절차로 패치와 설정을 운영해 취약점 노출을 지속적으로 낮추는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>모니터링</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>지표와 로그를 기반으로 이상 징후를 조기에 감지할 기준을 마련하는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <img src="./../../../assets/img/로드맵 숫자아이콘3.png" alt="">
+                                <h1>실습</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>서버 구축 실습</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>웹/DB/프록시 등 기본 구성을 직접 구축하고 운영 절차를 익히는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>네트워크 분리 실습</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>VLAN/ACL 개념을 적용해 구간 분리와 접근 통제를 구성하는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>장애 대응 실습</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>탐지→원인 분석→복구→재발방지 흐름을 반복 훈련하는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <img src="./../../../assets/img/로드맵 숫자 아이콘4.png" alt="">
+                                <h1>결과물</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>인프라 구성 문서</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>구성도·포트·계정 정책·운영 절차를 한 문서로 정리한 산출물입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>자동화 스크립트</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>설치·배포·백업 등 반복 작업을 재현 가능하게 만든 산출물입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>운영 런북</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>장애 유형별 점검 항목과 복구 절차를 표준화한 산출물입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <main>
+            <div class="rmq-pnl">
+                <div class="rmq-pnl-frm">
+                    <div class="rmq-pnl-box">
+                        <div class="rmq-pnl-head">
+                            <h1>추천 기술</h1>
+                        </div>
+
+                        <div class="rmq-pnl-rowitwide">
+                            <div class="rmq-pnl-it">
+                                <h3>Linux 운영</h3>
+                            </div>
+                        </div>
+
+                        <div class="rmq-pnl-rowitwide">
+                            <div class="rmq-pnl-it">
+                                <h3>네트워크 트러블슈팅</h3>
+                            </div>
+                        </div>
+
+                        <div class="rmq-pnl-rowitwide">
+                            <div class="rmq-pnl-it">
+                                <h3>자동화/배포 운영</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <main class="rmq-grid">
+
+            <div class="rmq-col">
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <h1>추천 성향</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>꼼꼼한 점검 습관</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>원인 추적 성향</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>안정성 우선 사고</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rmq-col">
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <h1>추천 자격증</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>CCNA</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>RHCSA(또는 동급)</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>AWS SAA</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <main>
+            <button class="btn" id="cnldjq">
+                <h1>채용공고 바로가기</h1>
+            </button>
+        </main>
+
+    </div>
+
+    
+    <script src="./../../../assets/js/main/roadmap/roadmap-questionnaire.js">
+
+    </script>
+</body>
+
+</html>

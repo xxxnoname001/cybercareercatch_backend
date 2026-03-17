@@ -1,0 +1,439 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadmap</title>
+    <link rel="stylesheet" href="./../../../assets/css/main/roadmap/roadmap-questionnaire1.css" />
+
+</head>
+
+<body>
+    <!--
+      Abbrev(축약어) 규칙
+      rmq = RoadMap Questionnaire (이 페이지 공통 prefix)
+      hdr = header(상단 타이틀 영역)
+      job = job cards(직무 카드 영역)
+      map = roadmap image(로드맵 이미지 영역)
+      more = 더보기 버튼 영역
+      pnl = panel(테두리 있는 박스/카드 단위)
+      frm = frame(패널 외곽 테두리)
+      box = 패널 내부 컨텐츠 박스
+      head = 패널 헤더(번호/제목 줄)
+      row = 한 줄(좌/우 또는 단일 항목)
+      colL/colR = 좌/우 컬럼
+      grid = 2열 배치 영역
+      col = grid의 컬럼
+      it = item(단일 항목)
+      ic = icon
+      img = image
+    -->
+    <div class="rmq-wrap">
+
+        <main class="rmq-hdr">
+            <div class="rmq-hdr-ic">
+                <img class="rmq-hdr-ic-img" src="./../../../assets/img/보안컨설팅 계열 직군 마크.png" alt="">
+            </div>
+
+            <div class="rmq-hdr-content">
+                <div class="rmq-hdr-titlebox">
+                    <h1>보안컨설팅 계열 직군 로드맵</h1>
+                    <div class="rmq-hdr-subbox">
+                        <h5>
+                            IT 인프라와 서비스 운영 전반의 보안 수준을 진단하고,<br>
+                            조직 환경에 맞는 기준·개선 전략·이행 계획을 수립해<br>
+                            보안 체계를 체계적으로 정착시키는 직군입니다.
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <main class="rmq-job">
+            <div class="rmq-job-rowtop">
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>관리 컨설팅, 기술컨설팅</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                IT 인프라 전반의 보안 위험 요소를 식별하고,<br>
+                                기업 맞춤형 보안 컴플라이언스와<br>
+                                전략을 수립합니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>연구원</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                최신 취약점과 위협 동향을 분석·검증하고,<br>
+                                실무 적용 가능한 보안 가이드와<br>
+                                대응 방향을 제시합니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>레드팀 / 블루팀</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                공격 검증과 방어 고도화를 병행하여,<br>
+                                실제 환경에서의 탐지·대응 역량을<br>
+                                체계적으로 강화합니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="rmq-job-rowbottom">
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>애플리케이션 보안 컨설턴트</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                개발 전 과정에서 보안 요구사항과<br>
+                                점검 체계를 적용해<br>
+                                취약점 발생 가능성을 낮춥니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>클라우드 보안 컨설턴트</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                클라우드 권한·네트워크·암호화·로깅 기준을 설계해<br>
+                                안전한 운영 구조를<br>
+                                정착시킵니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-job-card">
+                    <div class="rmq-job-cardin">
+                        <div class="rmq-job-cardttl">
+                            <h3>보안진단 컨설턴트(취약점 진단/모의침투)</h3>
+                        </div>
+                        <div class="rmq-job-carddesc">
+                            <h5>
+                                시스템과 서비스의 취약점을<br>
+                                재현 가능한 방식으로 검증하고<br>
+                                개선 우선순위를 제시합니다.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <main class="rmq-map">
+            <img src="./../../../assets/img/보안컨설팅 로드맵.png" alt="">
+        </main>
+
+        <main class="rmq-more">
+            <button class="btn" id="showmore">더보기 +</button>
+        </main>
+
+        <main>
+            <div class="rmq-steplist">
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <img src="./../../../assets/img/로드맵 숫자아이콘1.png" alt="">
+                                <h1>기초 다지기</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>IT 구조 이해</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>네트워크·서버·웹 동작 흐름을 이해해 진단 범위와 이슈를 정확히 정의하는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>문서화 역량</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>요구사항·현황·목표를 표준 형식으로 정리해 이해관계자 합의를 지원하는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>커뮤니케이션</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>다양한 부서와 협업해 일정·우선순위·완료 기준을 명확히 조율하는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <img src="./../../../assets/img/로드맵 숫자 아이콘 2.png" alt="">
+                                <h1>보안 기초 다지기</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>리스크 기반 접근</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>자산·위협·취약점 정보를 기반으로 영향도와 가능성을 평가해 우선순위를 결정하는 기준을 세우는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>통제 설계</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>정책·표준·절차를 운영 가능한 형태로 구성하고 책임·주기·예외를 포함해 통제를 구조화하는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>검증/증적</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>설정값·로그·승인 기록 등 객관적 근거로 이행 여부를 확인하고 재검증 기준을 마련하는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <img src="./../../../assets/img/로드맵 숫자아이콘3.png" alt="">
+                                <h1>실습</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>현황 진단 실습</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>체크리스트 기반 점검을 통해 부족한 통제 항목을 체계적으로 도출하는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>개선안 설계 실습</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>권한·로깅·암호화·운영 절차를 포함한 개선 설계를 문서로 완성하는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>보고서 작성 실습</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>요약 1장과 근거 자료를 일관된 구조로 구성해 전달력을 높이는 단계입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <img src="./../../../assets/img/로드맵 숫자 아이콘4.png" alt="">
+                                <h1>결과물</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>진단/개선 보고서</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>발견사항·영향·우선순위·개선안을 근거와 함께 제출 형식으로 정리한 산출물입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>표준 문서 세트</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>정책·표준·절차 템플릿을 구축해 운영 일관성과 점검 가능성을 확보한 산출물입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-coll">
+                                    <h3>개선 로드맵</h3>
+                                </div>
+                                <div class="rmq-pnl-colr">
+                                    <h3>과제·담당·일정·검증 기준을 포함해 실행 단계를 명확히 제시한 산출물입니다.</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <main>
+            <div class="rmq-pnl">
+                <div class="rmq-pnl-frm">
+                    <div class="rmq-pnl-box">
+                        <div class="rmq-pnl-head">
+                            <h1>추천 기술</h1>
+                        </div>
+
+                        <div class="rmq-pnl-rowitwide">
+                            <div class="rmq-pnl-it">
+                                <h3>리스크 평가 및 우선순위화</h3>
+                            </div>
+                        </div>
+
+                        <div class="rmq-pnl-rowitwide">
+                            <div class="rmq-pnl-it">
+                                <h3>보안 설계/진단 보고서 작성</h3>
+                            </div>
+                        </div>
+
+                        <div class="rmq-pnl-rowitwide">
+                            <div class="rmq-pnl-it">
+                                <h3>IAM·로그·암호화 기본 이해</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <main class="rmq-grid">
+
+            <div class="rmq-col">
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <h1>추천 성향</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>체계화·정리 중심</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>근거 기반 판단 선호</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>조율·설득 역량</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rmq-col">
+                <div class="rmq-pnl">
+                    <div class="rmq-pnl-frm">
+                        <div class="rmq-pnl-box">
+                            <div class="rmq-pnl-head">
+                                <h1>추천 자격증</h1>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>CISSP</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>CISA</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row">
+                                <div class="rmq-pnl-it">
+                                    <h3>ISO/IEC 27001 (Lead Auditor)</h3>
+                                </div>
+                            </div>
+
+                            <div class="rmq-pnl-row"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <main>
+            <button class="btn" id="cnldjq">
+                <h1>채용공고 바로가기</h1>
+            </button>
+        </main>
+
+    </div>
+
+    <script src="./../../../assets/js/main/roadmap/roadmap-questionnaire.js">
+
+    </script>
+</body>
+
+</html>

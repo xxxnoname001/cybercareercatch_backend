@@ -1,0 +1,174 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 페이지</title>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin/main-management/company-info.css">
+
+</head>
+
+<body class="companyInfo-body">
+
+    <div class="companyInfo-ctr">
+
+        <header class="companyInfo-hdr">
+
+            <div class="companyInfo-title">관리자 페이지</div>
+
+            <nav class="companyInfo-nav">
+                <a href="#">회원 관리</a>
+                <a href="./qna-management.html">메인 관리</a>
+                <a href="../community-management/expo-schedule.html">커뮤니티 관리</a>
+            </nav>
+
+            <button class="companyInfo-logout">로그아웃</button>
+
+        </header>
+
+        <main class="companyInfo-main">
+
+            <aside class="companyInfo-leftbar">
+
+                <div class="companyInfo-left-item">
+                    <a href="./qna-management.html">질의문 관리</a>
+                </div>
+
+                <div class="companyInfo-left-item companyInfo-active">
+                    <a href="./company-info.html">기업 정보페이지</a>
+                </div>
+
+                <div class="companyInfo-left-item">
+                    <a href="./roadmap-management.html">로드맵 관리</a>
+                </div>
+
+            </aside>
+
+            <form>
+
+                <section class="companyInfo-ct">
+
+
+                    <div class="companyInfo-search">
+                        <input type="text" placeholder="기업명검색">
+                        <button type="button">검색</button>
+                    </div>
+
+                    <div class="companyInfo-tblHead">
+                        <div class="col1">선택</div>
+                        <div class="col2">번호</div>
+                        <div class="col3">기업명</div>
+                        <div class="col4">직군</div>
+                        <div class="col5">날짜</div>
+                    </div>
+
+
+                    <div class="companyInfo-row">
+                        <div class="col1"><input type="checkbox"></div>
+                        <div class="col2">10</div>
+                        <div class="col3">모의 해킹 진단원</div>
+                        <div class="col4">보안컨설팅</div>
+                        <div class="col5">2026.11.14</div>
+                    </div>
+
+                    <div class="companyInfo-row">
+                        <div class="col1"><input type="checkbox"></div>
+                        <div class="col2">9</div>
+                        <div class="col3">모의 해킹 진단원</div>
+                        <div class="col4">보안컨설팅</div>
+                        <div class="col5">2026.11.14</div>
+                    </div>
+
+                    <div class="companyInfo-row">
+                        <div class="col1"><input type="checkbox"></div>
+                        <div class="col2">8</div>
+                        <div class="col3">모의 해킹 진단원</div>
+                        <div class="col4">보안컨설팅</div>
+                        <div class="col5">2026.11.14</div>
+                    </div>
+
+                    <div class="companyInfo-row">
+                        <div class="col1"><input type="checkbox"></div>
+                        <div class="col2">7</div>
+                        <div class="col3">모의 해킹 진단원</div>
+                        <div class="col4">보안컨설팅</div>
+                        <div class="col5">2026.11.14</div>
+                    </div>
+
+                    <div class="companyInfo-row">
+                        <div class="col1"><input type="checkbox"></div>
+                        <div class="col2">6</div>
+                        <div class="col3">모의 해킹 진단원</div>
+                        <div class="col4">보안컨설팅</div>
+                        <div class="col5">2026.11.14</div>
+                    </div>
+
+                    <div class="companyInfo-row">
+                        <div class="col1"><input type="checkbox"></div>
+                        <div class="col2">5</div>
+                        <div class="col3">모의 해킹 진단원</div>
+                        <div class="col4">보안컨설팅</div>
+                        <div class="col5">2026.11.14</div>
+                    </div>
+
+                    <div class="companyInfo-row">
+                        <div class="col1"><input type="checkbox"></div>
+                        <div class="col2">4</div>
+                        <div class="col3">모의 해킹 진단원</div>
+                        <div class="col4">보안컨설팅</div>
+                        <div class="col5">2026.11.14</div>
+                    </div>
+
+                    <div class="companyInfo-row">
+                        <div class="col1"><input type="checkbox"></div>
+                        <div class="col2">3</div>
+                        <div class="col3">모의 해킹 진단원</div>
+                        <div class="col4">보안컨설팅</div>
+                        <div class="col5">2026.11.14</div>
+                    </div>
+
+                    <div class="companyInfo-row">
+                        <div class="col1"><input type="checkbox"></div>
+                        <div class="col2">2</div>
+                        <div class="col3">모의 해킹 진단원</div>
+                        <div class="col4">보안컨설팅</div>
+                        <div class="col5">2026.11.14</div>
+                    </div>
+
+                    <div class="companyInfo-row">
+                        <div class="col1"><input type="checkbox"></div>
+                        <div class="col2">1</div>
+                        <div class="col3">모의 해킹 진단원</div>
+                        <div class="col4">보안컨설팅</div>
+                        <div class="col5">2026.11.14</div>
+                    </div>
+
+
+                    <div class="companyInfo-page">
+                        <span>&lt;</span>
+                        <span class="active">1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>&gt;</span>
+                    </div>
+
+
+                    <div class="companyInfo-del">
+                        <button type="button">삭제</button>
+                    </div>
+
+                </section>
+
+            </form>
+
+        </main>
+    </div>
+    <script src="${pageContext.request.contextPath}/assets/js/admin/main-management/company-info.js"></script>
+</body>
+
+</html>

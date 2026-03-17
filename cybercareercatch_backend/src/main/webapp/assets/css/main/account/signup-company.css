@@ -1,0 +1,259 @@
+header,
+footer {
+  min-height: 1px;
+}
+
+.account_signup_company_body {
+  margin: 0;
+  background: #ffffff;
+  color: #222222;
+  font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+.account_signup_company_body *,
+.account_signup_company_body *::before,
+.account_signup_company_body *::after {
+  box-sizing: border-box;
+}
+
+.account_signup_company_page {
+  padding: 40px 20px 120px;
+}
+
+.account_signup_company_wrap {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.account_signup_company_title {
+  margin: 0 0 34px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  color: #222222;
+}
+
+.account_signup_company_form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.account_signup_company_field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.account_signup_company_head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-height: 20px;
+}
+
+.account_signup_company_lbl {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #2e3440;
+}
+
+.account_signup_company_req {
+  margin-left: 4px;
+  color: #7d84ff;
+}
+
+.account_signup_company_ctrl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.account_signup_company_ctrl.has-btn .account_signup_company_box {
+  flex: 1 1 auto;
+}
+
+.account_signup_company_box {
+  position: relative;
+  width: 100%;
+  height: 46px;
+  border: 1px solid #e4e8f2;
+  border-radius: 8px;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.account_signup_company_box:hover {
+  border-color: #d5dbea;
+}
+
+.account_signup_company_box:focus-within {
+  border-color: #7d84ff;
+  box-shadow: 0 0 0 4px rgba(125, 132, 255, 0.12);
+}
+
+.account_signup_company_box.is-error {
+  border-color: #ef8a8a;
+  background-color: #fffafa;
+}
+
+.account_signup_company_box.is-success {
+  border-color: #7d84ff;
+}
+
+.account_signup_company_box input {
+  width: 100%;
+  height: 100%;
+  padding: 0 14px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  color: #222222;
+  font-family: inherit;
+}
+
+.account_signup_company_box input::placeholder {
+  color: #c2c8d3;
+}
+
+.account_signup_company_box.has-icon input {
+  padding-left: 46px;
+}
+
+.account_signup_company_icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #b7bfcc;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.account_signup_company_icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.account_signup_company_btn {
+  flex: 0 0 92px;
+  height: 46px;
+  border: none;
+  border-radius: 8px;
+  background: #7d84ff;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.account_signup_company_btn:hover {
+  background: #6d75ff;
+}
+
+.account_signup_company_btn:active {
+  transform: translateY(1px);
+}
+
+.account_signup_company_btn:focus-visible,
+.account_signup_company_submit:focus-visible {
+  outline: 3px solid rgba(125, 132, 255, 0.22);
+  outline-offset: 2px;
+}
+
+.account_signup_company_msg {
+  display: none;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.account_signup_company_msg.is-show {
+  display: inline-block;
+}
+
+.account_signup_company_msg.is-error {
+  color: #ef6f6f;
+}
+
+.account_signup_company_msg.is-success {
+  color: #7d84ff;
+}
+
+.account_signup_company_help {
+  margin: 2px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #8d95a3;
+}
+
+.account_signup_company_submit {
+  width: 100%;
+  height: 48px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #7d84ff;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.account_signup_company_submit:hover {
+  background-color: #6d75ff;
+}
+
+.account_signup_company_submit:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 560px) {
+  .account_signup_company_page {
+    padding: 40px 16px 90px;
+  }
+
+  .account_signup_company_title {
+    margin-bottom: 28px;
+    font-size: 24px;
+  }
+
+  .account_signup_company_ctrl.has-btn {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .account_signup_company_btn {
+    width: 100%;
+    flex-basis: auto;
+    height: 44px;
+  }
+
+  .account_signup_company_box {
+    height: 44px;
+  }
+
+  .account_signup_company_submit {
+    height: 50px;
+  }
+}

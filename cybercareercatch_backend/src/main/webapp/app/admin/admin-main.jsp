@@ -1,0 +1,290 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>관리자 메인대시보드</title>
+<link rel="stylesheet" href="../../assets/css/admin/admin-main.css">
+</head>
+
+<body class="admin-main-body">
+
+<div class="admin-main-container">
+
+<header class="admin-main-top">
+
+<div class="admin-main-title">
+  <a href="./admin-main.html">관리자 페이지</a></div>
+
+<nav class="admin-main-menu">
+<a href="../admin/member-management/member-info.html">회원 관리</a>
+<a href="../admin/main-management/qna-management.html">메인 관리</a>
+<a href="../admin/community-management/expo-schedule.html">커뮤니티 관리</a>
+</nav>
+
+<button class="admin-main-logout">로그아웃</button>
+
+</header>
+
+<main class="admin-main-main">
+<!-- 
+<aside class="admin-main-leftbar">
+
+<div class="admin-main-left-item admin-main-active">
+<a href="./expo-schedule.html">일반회원 정보 조회</a>
+</div>
+
+<div class="admin-main-left-item">
+<a href="./community-management.html">기업회원 정보 조회</a>
+</div>
+
+<div class="admin-main-left-item">
+<a href="./company-qna.html">기업회원 승인, 반려</a>
+</div>
+
+</aside> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 오른쪽 콘텐츠 -->
+
+<section class="admin-main-content">
+
+<h2 class="admin-main-dashboard-title">대시보드</h2>
+
+<div class="admin-main-dashboard">
+
+<!-- 일반회원 카드 -->
+
+<div class="admin-main-card">
+
+<h3>일반회원</h3>
+
+<div class="admin-main-summary">
+<p>총 회원 수 : 200명</p>
+<p>오늘 가입 회원 : 5명</p>
+</div>
+
+<div class="admin-main-list">
+
+<div class="admin-main-row admin-main-row-head">
+<div>번호</div>
+<div>아이디</div>
+<div>회원이름</div>
+<div>가입날짜</div>
+</div>
+
+<div class="admin-main-row">
+<div>1</div>
+<div>id122</div>
+<div>김성민</div>
+<div>260304</div>
+</div>
+
+<div class="admin-main-row">
+<div>2</div>
+<div>id123</div>
+<div>김민서</div>
+<div>260304</div>
+</div>
+
+<div class="admin-main-row">
+<div>3</div>
+<div>id123</div>
+<div>김민서</div>
+<div>260304</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- 기업회원 카드 -->
+
+<div class="admin-main-card">
+
+<h3>기업회원</h3>
+
+<div class="admin-main-summary">
+<p>총 회원 수 : 40명</p>
+<p>오늘 가입 기업회원 : 5명</p>
+</div>
+
+<div class="admin-main-list">
+
+<div class="admin-main-row admin-main-row-head">
+<div>번호</div>
+<div>아이디</div>
+<div>기업이름</div>
+<div>가입날짜</div>
+</div>
+
+<div class="admin-main-row">
+<div>1</div>
+<div>id122</div>
+<div>쿠크</div>
+<div>260304</div>
+</div>
+
+<div class="admin-main-row">
+<div>2</div>
+<div>id123</div>
+<div>안랩</div>
+<div>260304</div>
+</div>
+
+<div class="admin-main-row">
+<div>3</div>
+<div>id123</div>
+<div>안랩</div>
+<div>260304</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+
+<!-- 통계 -->
+<!-- 
+<div class="admin-main-stats">
+
+<div class="admin-main-stat-box">
+총 일반 회원 수<br><b>200</b>
+</div>
+
+<div class="admin-main-stat-box">
+총 기업 회원 수<br><b>100</b>
+</div>
+
+<div class="admin-main-stat-box">
+총 회원 수<br><b>300</b>
+</div>
+
+</div> -->
+<div class="admin-main-stats">
+
+  <div class="admin-main-stat-box-title">총 일반 회원 수</div>
+  <div class="admin-main-stat-box-title">총 기업 회원 수</div>
+  <div class="admin-main-stat-box-title">총 회원 수</div>
+
+  <div class="admin-main-stat-box-number">200</div>
+  <div class="admin-main-stat-box-number">100</div>
+  <div class="admin-main-stat-box-number">300</div>
+
+</div>
+
+<!-- 박람회 일정 -->
+
+<h2 class="admin-main-expo-title">박람회 일정</h2>
+<div class="admin-main-summary">
+<p>총 박람회 수 : 12명</p>
+<p>오늘 등록된 박람회 수 : 1개</p>
+</div>
+<div class="admin-main-card">
+
+<div class="admin-main-list">
+
+<div class="admin-main-expo-row admin-main-row-head">
+<div>번호</div>
+<div>박람회명</div>
+<div>시작일</div>
+<div>종료일</div>
+<div>장소</div>
+<div>참여기업수</div>
+<div>진행상태</div>
+</div>
+
+<div class="admin-main-expo-row">
+<div>1</div>
+<div>보안 취업 박람회</div>
+<div>26.04.10</div>
+<div>26.04.12</div>
+<div>63빌딩</div>
+<div>12</div>
+<div>예정</div>
+</div>
+
+<div class="admin-main-expo-row">
+<div>2</div>
+<div>IT 채용 박람회</div>
+<div>26.04.07</div>
+<div>26.04.12</div>
+<div>킨택스</div>
+<div>12</div>
+<div>진행중</div>
+</div>
+
+<div class="admin-main-expo-row">
+<div>3</div>
+<div>보안 취업 박람회</div>
+<div>26.04.10</div>
+<div>26.04.12</div>
+<div>63빌딩</div>
+<div>12</div>
+<div>예정</div>
+</div>
+
+<div class="admin-main-expo-row">
+<div>4</div>
+<div>IT 채용 박람회</div>
+<div>26.04.07</div>
+<div>26.04.12</div>
+<div>킨택스</div>
+<div>12</div>
+<div>진행중</div>
+</div>
+
+<div class="admin-main-expo-row">
+<div>5</div>
+<div>보안 취업 박람회</div>
+<div>26.04.10</div>
+<div>26.04.12</div>
+<div>63빌딩</div>
+<div>12</div>
+<div>예정</div>
+</div>
+
+
+</div>
+</div>
+
+
+<!-- 박람회 통계 -->
+<div class="admin-main-expo">
+
+  <div class="admin-main-stat-expobox-title">전체 박람회 수</div>
+  <div class="admin-main-stat-expobox-title">예정 박람회 수</div>
+  <div class="admin-main-stat-expobox-title">진행 증 박람회 수</div>
+<div class="admin-main-stat-expobox-title">종료</div>
+
+  <div class="admin-main-stat-expobox-number">12</div>
+  <div class="admin-main-stat-expobox-number">4</div>
+  <div class="admin-main-stat-expobox-number">1</div>
+<div class="admin-main-stat-expobox-number">7</div>
+
+</div>
+
+
+
+
+</section>
+
+</main>
+
+</div>
+
+</body>
+</html>

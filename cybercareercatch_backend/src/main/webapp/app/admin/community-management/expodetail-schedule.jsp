@@ -1,0 +1,167 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 페이지</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin/community-management/expodetail-schedule.css">
+</head>
+
+<body class="expoDetail-body">
+
+    <div class="expoDetail-container">
+
+        <header class="expoDetail-top">
+
+            <div class="expoDetail-title">관리자 페이지</div>
+
+            <nav class="expoDetail-menu1">
+                <a href="#">회원 관리</a>
+                <a href="./qna-management.html">메인 관리</a>
+                <a href="../community-management/expo-schedule.html">커뮤니티 관리</a>
+            </nav>
+
+            <button class="expoDetail-logout" type="button">로그아웃</button>
+
+        </header>
+
+
+        <main class="expoDetail-main">
+
+            <aside class="expoDetail-leftbar">
+
+                <div class="expoDetail-left-item expoDetail-active">
+                    <a href="./expo-schedule.html">박람회 일정</a>
+                </div>
+
+                <div class="expoDetail-left-item">
+                    <a href="./community-management.html">자유 게시판</a>
+                </div>
+
+                <div class="expoDetail-left-item">
+                    <a href="./company-qna.html">기업 QnA</a>
+                </div>
+
+            </aside>
+
+            <form>
+
+                <section class="expoDetail-content">
+
+                    <div class="expoDetail-tab">
+
+                        <div class="expoDetail-tab-item">
+                            <a href="${pageContext.request.contextPath}/html/admin/community-management/expo-schedule.html">박람회 일정</a>
+                        </div>
+
+                        <div class="expoDetail-tab-item expoDetail-active">
+                            박람회 일정 관리
+                        </div>
+
+                    </div>
+
+
+                    <h3 class="expoDetail-title2">일정등록</h3>
+
+
+                    <div class="expoDetail-table">
+
+                        <div class="expoDetail-row expoDetail-head">
+                            <div>번호</div>
+                            <div>박람회 명</div>
+                            <div>시작일</div>
+                            <div>종료일</div>
+                            <div>장소</div>
+                            <div>참여기업수</div>
+                            <div>관리</div>
+                        </div>
+
+
+                        <div class="expoDetail-row">
+                            <div>9</div>
+                            <div>제1회 박람회</div>
+                            <div>2026년01월01일</div>
+                            <div>2026년01월04일</div>
+                            <div>서울</div>
+                            <div>5</div>
+                            <div>수정 삭제</div>
+                        </div>
+
+
+                        <div class="expoDetail-row">
+                            <div>8</div>
+                            <div>제1회 박람회</div>
+                            <div>2026년01월01일</div>
+                            <div>2026년01월04일</div>
+                            <div>서울</div>
+                            <div>5</div>
+                            <div>수정 삭제</div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="expoDetail-form">
+
+                        <div class="expoDetail-form-row">
+                            <label>제목</label>
+                            <input type="text" class="titleInput">
+                        </div>
+
+
+                        <div class="expoDetail-form-row">
+                            <label>시작일 종료일</label>
+                            <input type="date" class="startInput">
+                            <span>-</span>
+                            <input type="date" class="endInput">
+                        </div>
+
+
+                        <div class="expoDetail-form-row">
+                            <label>장소</label>
+                            <input type="text" class="placeInput">
+                        </div>
+
+
+                        <div class="expoDetail-company-input">
+
+                            <h4>회사 입력</h4>
+
+                            <input type="text" class="expoDetail-company-text">
+                            <button type="button" class="expoDetail-company-add">입력</button>
+
+                        </div>
+
+
+                        <div class="expoDetail-company-list">
+
+                            <p>(주) 구굴</p>
+                            <p>(주) 구굴</p>
+
+                        </div>
+
+
+                        <div class="expoDetail-form-btn">
+
+                            <button type="button" class="expoDetail-save">저장</button>
+                            <button type="button" class="expoDetail-reset">초기화</button>
+
+                        </div>
+
+
+                </section>
+
+            </form>
+
+        </main>
+
+    </div>
+
+
+    <script src="${pageContext.request.contextPath}/assets/js/admin/community-management/expddetail-schedule.js"></script>
+
+</body>
+
+</html>

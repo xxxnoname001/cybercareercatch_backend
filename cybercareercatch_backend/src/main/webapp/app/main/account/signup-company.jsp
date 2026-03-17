@@ -1,0 +1,275 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기업 회원가입</title>
+  <link rel="stylesheet" href="../../../assets/css/main/account/signup-company.css" />
+</head>
+<body class="account_signup_company_body">
+  <header></header>
+
+  <main class="account_signup_company_page">
+    <section class="account_signup_company_wrap" aria-labelledby="corpJoinTitle">
+      <h1 id="corpJoinTitle" class="account_signup_company_title">기업 회원가입</h1>
+
+      <form class="account_signup_company_form" id="signupCompanyForm" action="${pageContext.request.contextPath}/" method="post" novalidate>
+
+        <!-- 기업명 -->
+        <div class="account_signup_company_field">
+          <div class="account_signup_company_head">
+            <label class="account_signup_company_lbl" for="companyName">
+              기업명<span class="account_signup_company_req">*</span>
+            </label>
+          </div>
+          <div class="account_signup_company_ctrl">
+            <div class="account_signup_company_box" id="companyNameBox">
+              <input
+                type="text"
+                id="companyName"
+                name="companyName"
+                placeholder="ex) (주) 사이버커리어캐치"
+                autocomplete="organization"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 사업자등록번호 -->
+        <div class="account_signup_company_field">
+          <div class="account_signup_company_head">
+            <label class="account_signup_company_lbl" for="businessNumber">
+              사업자등록번호<span class="account_signup_company_req">*</span>
+            </label>
+          </div>
+          <div class="account_signup_company_ctrl">
+            <div class="account_signup_company_box" id="businessNumberBox">
+              <input
+                type="text"
+                id="businessNumber"
+                name="businessNumber"
+                placeholder="ex) 123-45-67890"
+                inputmode="numeric"
+                maxlength="12"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 기업 주소 -->
+        <div class="account_signup_company_field">
+          <div class="account_signup_company_head">
+            <label class="account_signup_company_lbl" for="companyAddress">
+              기업 주소<span class="account_signup_company_req">*</span>
+            </label>
+          </div>
+          <div class="account_signup_company_ctrl">
+            <div class="account_signup_company_box" id="companyAddressBox">
+              <input
+                type="text"
+                id="companyAddress"
+                name="companyAddress"
+                placeholder="ex) 서울시 강남구 테헤란로 123"
+                autocomplete="street-address"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 담당자 이름 -->
+        <div class="account_signup_company_field">
+          <div class="account_signup_company_head">
+            <label class="account_signup_company_lbl" for="managerName">
+              담당자 이름<span class="account_signup_company_req">*</span>
+            </label>
+          </div>
+          <div class="account_signup_company_ctrl">
+            <div class="account_signup_company_box" id="managerNameBox">
+              <input
+                type="text"
+                id="managerName"
+                name="managerName"
+                placeholder="ex) 홍길동"
+                autocomplete="name"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 담당자 전화번호 -->
+        <div class="account_signup_company_field">
+          <div class="account_signup_company_head">
+            <label class="account_signup_company_lbl" for="managerPhone">
+              담당자 전화번호<span class="account_signup_company_req">*</span>
+            </label>
+          </div>
+          <div class="account_signup_company_ctrl has-btn">
+            <div class="account_signup_company_box" id="managerPhoneBox">
+              <input
+                type="tel"
+                id="managerPhone"
+                name="managerPhone"
+                placeholder="ex) 01012345678"
+                inputmode="numeric"
+                maxlength="11"
+                autocomplete="tel"
+              />
+            </div>
+            <button type="button" class="account_signup_company_btn" id="requestSmsBtn">
+              인증요청
+            </button>
+          </div>
+        </div>
+
+        <!-- 인증번호 입력 -->
+        <div class="account_signup_company_field">
+          <div class="account_signup_company_head">
+            <label class="account_signup_company_lbl" for="authCode">
+              인증번호 입력<span class="account_signup_company_req">*</span>
+            </label>
+
+            <span class="account_signup_company_msg is-error" id="authCodeErrorMsg">
+              잘못된 인증번호입니다
+            </span>
+            <span class="account_signup_company_msg is-success" id="authCodeSuccessMsg">
+              인증이 완료되었습니다
+            </span>
+          </div>
+
+          <div class="account_signup_company_ctrl has-btn">
+            <div class="account_signup_company_box" id="authCodeBox">
+              <input
+                type="text"
+                id="authCode"
+                name="authCode"
+                placeholder="ex) 123456"
+                inputmode="numeric"
+                maxlength="6"
+                autocomplete="one-time-code"
+              />
+            </div>
+            <button type="button" class="account_signup_company_btn" id="verifyAuthCodeBtn">
+              확인
+            </button>
+          </div>
+        </div>
+
+        <!-- 아이디 -->
+        <div class="account_signup_company_field">
+          <div class="account_signup_company_head">
+            <label class="account_signup_company_lbl" for="userId">
+              아이디<span class="account_signup_company_req">*</span>
+            </label>
+
+            <span class="account_signup_company_msg is-error" id="userIdErrorMsg">
+              아이디는 영어와 숫자의 조합으로 입력해주세요
+            </span>
+            <span class="account_signup_company_msg is-success" id="userIdSuccessMsg">
+              아이디 형식이 올바릅니다
+            </span>
+          </div>
+
+          <div class="account_signup_company_ctrl">
+            <div class="account_signup_company_box has-icon" id="userIdBox">
+              <span class="account_signup_company_icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="4"></circle>
+                  <path d="M4 20a8 8 0 0 1 16 0"></path>
+                </svg>
+              </span>
+              <input
+                type="text"
+                id="userId"
+                name="userId"
+                placeholder="ex) hong1234 (영문, 숫자 포함 5자 이상 20자 이하)"
+                minlength="5"
+                maxlength="20"
+                autocomplete="username"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 비밀번호 -->
+        <div class="account_signup_company_field">
+          <div class="account_signup_company_head">
+            <label class="account_signup_company_lbl" for="password">
+              비밀번호<span class="account_signup_company_req">*</span>
+            </label>
+          </div>
+
+          <div class="account_signup_company_ctrl">
+            <div class="account_signup_company_box has-icon" id="passwordBox">
+              <span class="account_signup_company_icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 11V8a5 5 0 0 1 10 0v3"></path>
+                  <rect x="5" y="11" width="14" height="10" rx="2"></rect>
+                </svg>
+              </span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="영문, 숫자, 특수문자 포함 8자 이상 20자 이하"
+                minlength="8"
+                maxlength="20"
+                autocomplete="new-password"
+              />
+            </div>
+          </div>
+
+          <p class="account_signup_company_help">
+            영어, 숫자, 특수문자를 포함해 8자 이상 20자 이하로 입력해주세요.
+          </p>
+        </div>
+
+        <!-- 비밀번호 재확인 -->
+        <div class="account_signup_company_field">
+          <div class="account_signup_company_head">
+            <label class="account_signup_company_lbl" for="passwordConfirm">
+              비밀번호 재확인<span class="account_signup_company_req">*</span>
+            </label>
+
+            <span class="account_signup_company_msg is-error" id="passwordConfirmErrorMsg">
+              비밀번호가 일치하지 않습니다
+            </span>
+            <span class="account_signup_company_msg is-success" id="passwordConfirmSuccessMsg">
+              비밀번호가 일치합니다
+            </span>
+          </div>
+
+          <div class="account_signup_company_ctrl has-btn">
+            <div class="account_signup_company_box has-icon" id="passwordConfirmBox">
+              <span class="account_signup_company_icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 11V8a5 5 0 0 1 10 0v3"></path>
+                  <rect x="5" y="11" width="14" height="10" rx="2"></rect>
+                </svg>
+              </span>
+              <input
+                type="password"
+                id="passwordConfirm"
+                name="passwordConfirm"
+                placeholder="비밀번호를 한 번 더 입력하세요"
+                autocomplete="new-password"
+              />
+            </div>
+            <button type="button" class="account_signup_company_btn" id="checkPasswordBtn">
+              확인
+            </button>
+          </div>
+        </div>
+
+        <!-- 회원가입 완료 버튼 -->
+        <button type="submit" class="account_signup_company_submit">회원가입</button>
+      </form>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script src="../../../assets/js/main/account/signup-company.js"></script>
+</body>
+</html>

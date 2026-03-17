@@ -1,0 +1,249 @@
+/* 
+  축약어 규칙
+  cmd = Community Detail (커뮤니티 상세 페이지 공통 prefix)
+  top = 상단 타이틀 영역
+  ttl = title(제목)
+  mv = move button(이동 버튼)
+  pnl = panel(전체 박스)
+  post = 게시글 영역
+  head = 게시글 상단 영역
+  info = 게시글 정보 영역
+  it = item(단일 항목)
+  act = action button 영역
+  btn = button(버튼)
+  cont = content(내용 영역)
+  edit = 수정 영역
+  inp = input(입력창)
+  ta = textarea(내용 입력창)
+  cmt = comment(댓글 영역)
+  list = 댓글 목록 영역
+  write = 댓글 작성 영역
+  row = 댓글 한 줄 영역
+  left = 댓글 왼쪽 영역
+  meta = 댓글 작성 정보 영역
+  text = 댓글 내용 영역
+  del = 삭제 버튼
+
+  요약 기준
+  community = cm
+  detail = d
+  information = info
+  comment = cmt
+  input = inp
+  textarea = ta
+  button = btn
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  color: black;
+  font-size: 14px;
+}
+
+.cmd-wrap {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 50px 0 80px;
+}
+
+.cmd-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.cmd-top-ttl {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.cmd-top-mv {
+  background-color: #7d84e6;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.cmd-pnl {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  background-color: white;
+  padding: 30px;
+}
+
+.cmd-post {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+}
+
+.cmd-head {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  padding-bottom: 16px;
+}
+
+.cmd-head-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.cmd-post-ttl {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.cmd-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #666666;
+}
+
+.cmd-act {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cmd-act-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: white;
+  font-size: 13px;
+}
+
+.cmd-act-del {
+  background-color: rgb(252, 126, 126);
+}
+
+.cmd-act-save {
+  background-color: #7d84e6;
+}
+
+.cmd-act-cancel {
+  background-color: #7d84e6;
+}
+
+.cmd-cont {
+  width: 100%;
+  min-height: 280px;
+  padding: 20px 0;
+  line-height: 1.7;
+}
+
+.cmd-edit {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.cmd-edit-inp {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.cmd-edit-ta {
+  width: 100%;
+  height: 260px;
+  padding: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  resize: none;
+  font-size: 14px;
+}
+
+.cmd-cmt {
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+}
+
+.cmd-cmt-list {
+  width: 100%;
+}
+
+.cmd-cmt-write {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.cmd-cmt-inp {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.cmd-cmt-btn {
+  width: 70px;
+  height: 42px;
+  border: none;
+  border-radius: 6px;
+  background-color: #7d84e6;
+  color: white;
+  font-size: 13px;
+}
+
+.cmd-cmt-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.cmd-cmt-left {
+  width: 92%;
+}
+
+.cmd-cmt-meta {
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 6px;
+}
+
+.cmd-cmt-text {
+  font-size: 14px;
+  color: black;
+  line-height: 1.6;
+}
+
+.cmd-cmt-del {
+  border: none;
+  background-color: white;
+  color: #7d84e6;
+  font-size: 13px;
+}
