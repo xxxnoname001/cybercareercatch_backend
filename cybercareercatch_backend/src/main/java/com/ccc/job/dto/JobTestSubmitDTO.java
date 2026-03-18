@@ -2,7 +2,7 @@ package com.ccc.job.dto;
 
 public class JobTestSubmitDTO {
 
-    private int jobResultNumber;
+	private int jobResultNumber;
     private int userNumber;
     private int jobQuestionNumber;
     private String jobQuestionContentSnapshot;
@@ -49,4 +49,13 @@ public class JobTestSubmitDTO {
     public void setAnswerContent(String answerContent) {
         this.answerContent = answerContent;
     }
+
+	@Override
+	public String toString() {
+		return "JobTestSubmitDTO [jobResultNumber=" + jobResultNumber + ", userNumber=" + userNumber
+				+ ", jobQuestionNumber=" + jobQuestionNumber + ", jobQuestionContentSnapshot="
+				+ jobQuestionContentSnapshot + ", answerContent=" + answerContent + "]";
+	}
+    
+    
 }

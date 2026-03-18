@@ -1,7 +1,5 @@
 package com.ccc.admin.dto;
 
-import java.util.Date;
-
 public class AdminCompanyListDTO {
 
     private int userNumber;
@@ -60,4 +58,12 @@ public class AdminCompanyListDTO {
     public void setCompanyState(String companyState) {
         this.companyState = companyState;
     }
+
+	@Override
+	public String toString() {
+		return "AdminCompanyListDTO [userNumber=" + userNumber + ", userId=" + userId + ", companyNumber="
+				+ companyNumber + ", companyName=" + companyName + ", userJoinDate=" + userJoinDate + ", companyState="
+				+ companyState + "]";
+	}
+    
 }

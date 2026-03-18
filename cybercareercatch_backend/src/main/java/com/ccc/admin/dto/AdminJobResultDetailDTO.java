@@ -1,17 +1,14 @@
 package com.ccc.admin.dto;
 
-import java.util.Date;
-
 public class AdminJobResultDetailDTO {
-
-    private int jobResultNumber;
+	private int jobResultNumber;
     private int userNumber;
     private String userName;
     private String userId;
     private String jobResultStatus;
     private String jobName;
-    private Date jobResultCreatedDate;
-    private Date jobResultConfirmDate;
+    private String jobResultCreatedDate;
+    private String jobResultConfirmDate;
     private int jobQuestionNumber;
     private String jobQuestionContentSnapshot;
     private String answerContent;
@@ -66,19 +63,19 @@ public class AdminJobResultDetailDTO {
         this.jobName = jobName;
     }
 
-    public Date getJobResultCreatedDate() {
+    public String getJobResultCreatedDate() {
         return jobResultCreatedDate;
     }
 
-    public void setJobResultCreatedDate(Date jobResultCreatedDate) {
+    public void setJobResultCreatedDate(String jobResultCreatedDate) {
         this.jobResultCreatedDate = jobResultCreatedDate;
     }
 
-    public Date getJobResultConfirmDate() {
+    public String getJobResultConfirmDate() {
         return jobResultConfirmDate;
     }
 
-    public void setJobResultConfirmDate(Date jobResultConfirmDate) {
+    public void setJobResultConfirmDate(String jobResultConfirmDate) {
         this.jobResultConfirmDate = jobResultConfirmDate;
     }
 
@@ -105,4 +102,14 @@ public class AdminJobResultDetailDTO {
     public void setAnswerContent(String answerContent) {
         this.answerContent = answerContent;
     }
+
+	@Override
+	public String toString() {
+		return "AdminJobResultDetailDTO [jobResultNumber=" + jobResultNumber + ", userNumber=" + userNumber
+				+ ", userName=" + userName + ", userId=" + userId + ", jobResultStatus=" + jobResultStatus
+				+ ", jobName=" + jobName + ", jobResultCreatedDate=" + jobResultCreatedDate + ", jobResultConfirmDate="
+				+ jobResultConfirmDate + ", jobQuestionNumber=" + jobQuestionNumber + ", jobQuestionContentSnapshot="
+				+ jobQuestionContentSnapshot + ", answerContent=" + answerContent + "]";
+	}
+    
 }
