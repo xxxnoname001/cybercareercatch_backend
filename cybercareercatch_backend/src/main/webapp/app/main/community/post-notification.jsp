@@ -6,61 +6,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>공지사항</title>
-  <link rel="stylesheet" href="../../../assets/css/main/community/post-notification.css">
+  <title>자유게시판 공지사항</title>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/community/post-notification.css">
 </head>
 
 <body>
-  <!--
-    축약어 규칙
-    cnd = Community Notice Detail (커뮤니티 공지 상세 페이지 공통 prefix)
-    top = 상단 타이틀 영역
-    ttl = title(제목)
-    mv = move button(이동 버튼)
-    pnl = panel(전체 박스)
-    head = 상단 정보 영역
-    info = 작성자/날짜/조회수 영역
-    it = item(단일 항목)
-    cont = 본문 영역
-    btm = 하단 버튼 영역
-    btn = button(버튼)
+  <%--
+    자유게시판 공지도
+    비회원 + 일반회원은 조회 가능
+    기업회원은 접근 불가
+  --%>
+  <c:choose>
+    <c:when test="${empty sessionScope.userType or sessionScope.userType == '일반회원'}">
 
-    요약 기준
-    community = c
-    notice = n
-    detail = d
-    information = info
-    button = btn
-  -->
+      <!--
+        NoticeDTO 기준
+        - postNumber
+        - postType
+        - adminNumber
+        - adminId
+        - postTitle
+        - postContent
+        - postDate
+        - editDate
+        - viewCount
 
-  <main class="cnd-wrap">
-    <div class="cnd-top">
-      <h2 class="cnd-top-ttl">공지사항</h2>
-      <a href="post-list.html" class="cnd-top-mv">자유게시판으로 이동하기</a>
-    </div>
+        중요:
+        이 공지는 관리자 페이지에서 작성/관리됩니다.
+        사용자 화면에서는 조회만 합니다.
+      -->
 
-    <div class="cnd-pnl">
-      <div class="cnd-head">
-        <h3 class="cnd-head-ttl" id="cndNoticeTitle">공지 제목</h3>
-
-        <div class="cnd-head-info">
-          <span class="cnd-head-info-it" id="cndNoticeWriter">작성자: 관리자</span>
-          <span class="cnd-head-info-it" id="cndNoticeDate">| 작성일: 260308</span>
-          <span class="cnd-head-info-it" id="cndNoticeViews">| 조회수: 100</span>
+      <main class="cnd-wrap">
+        <div class="cnd-top">
+          <h2 class="cnd-top-ttl">공지사항</h2>
+          <a href="${pageContext.request.contextPath}/app/main/community/post-list.jsp" class="cnd-top-mv">
+            자유게시판으로 이동하기
+          </a>
         </div>
-      </div>
 
-      <div class="cnd-cont" id="cndNoticeContent">
-        공지 내용이 여기에 표시됩니다.
-      </div>
+        <div class="cnd-pnl">
+          <c:choose>
+            <c:when test="${not empty notice}">
 
-      <div class="cnd-btm">
-        <a href="post-list.html" class="cnd-btn">목록으로</a>
-      </div>
-    </div>
-  </main>
+              <div class="cnd-head">
+                <h3 class="cnd-head-ttl" id="cndNoticeTitle">
+                  <c:out value="${notice.postTitle}" />
+                </h3>
 
-  <script src="../../../assets/js/main/community/notice-detail.js"></script>
+                <div class="cnd-head-info">
+                  <span class="cnd-head-info-it" id="cndNoticeWriter">
+                    작성자: <c:out value="${notice.adminId}" />
+                  </span>
+                  <span class="cnd-head-info-it" id="cndNoticeDate">
+                    | 작성일: <c:out value="${notice.postDate}" />
+                  </span>
+                  <span class="cnd-head-info-it" id="cndNoticeViews">
+                    | 조회수: <c:out value="${notice.viewCount}" />
+                  </span>
+                </div>
+              </div>
+
+              <%-- 공지 내용 출력 --%>
+              <div class="cnd-cont" id="cndNoticeContent">
+                <c:out value="${notice.postContent}" />
+              </div>
+
+              <%--
+                공지는 관리자 페이지에서 관리하므로
+                사용자 화면에는 수정/삭제 버튼을 두지 않습니다.
+              --%>
+
+            </c:when>
+
+            <c:otherwise>
+              <div class="cnd-cont">존재하지 않는 공지사항입니다.</div>
+            </c:otherwise>
+          </c:choose>
+
+          <div class="cnd-btm">
+            <a href="${pageContext.request.contextPath}/app/main/community/post-list.jsp" class="cnd-btn">목록으로</a>
+          </div>
+        </div>
+      </main>
+    </c:when>
+
+    <c:otherwise>
+      <script>
+        alert("자유게시판은 일반회원만 이용할 수 있습니다.");
+        location.href = "${pageContext.request.contextPath}/";
+      </script>
+    </c:otherwise>
+  </c:choose>
+
+  <script src="${pageContext.request.contextPath}/assets/js/main/community/post-notification.js"></script>
 </body>
-
 </html>
