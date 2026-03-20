@@ -12,7 +12,7 @@
             JOB_QUESTION_NUMBER AS jobQuestionNumber,
             JOB_QUESTION_CONTENT AS jobQuestionContent
         FROM TBL_JOB_RECOMMEND_QUESTION
-        WHERE JOB_QUESTION_NUMBER = #{jobQnestionNumber}
+        WHERE JOB_QUESTION_NUMBER = #{value}
     </select>
 
     <!-- 메인 추천 직군 유형 4개 조회 -->

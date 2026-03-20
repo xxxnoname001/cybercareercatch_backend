@@ -3,6 +3,7 @@ package com.ccc.company.dao;
 import org.apache.ibatis.session.SqlSession;
 
 import com.ccc.common.config.MyBatisConfig;
+import com.ccc.company.dto.CompanyDetailDTO;
 import com.ccc.company.dto.CompanyInfoDTO;
 
 public class CompanyInfoDAO {
@@ -28,5 +29,10 @@ public class CompanyInfoDAO {
 		System.out.println("기업정보 존재 여부 확인");
 		sqlSession.insert("companyInfo.insertCompanyInfo", companyinfoDTO);
 	}
-
+	
+//	3.기업 정보 페이지 조회
+	public CompanyDetailDTO selectCompanyInfoPage(int userNumber) {
+		System.out.println("기업정보페이지 조회");
+		return sqlSession.selectOne("companyInfo.selectCompanyInfoPage", userNumber);
+	}
 }
