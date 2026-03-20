@@ -1,285 +1,258 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    font-size: 14px;
-    line-height: 1.7;
+.companyInfo-body {
+    margin: 0;
+    background: #ffffff;
+    font-family: sans-serif;
 }
 
-header {
-    height : 166px;
+.companyInfo-ctr {
+    width: 1300px;
+    margin: 40px auto;
+    background: #c9cfe0;
+    padding: 30px;
 }
 
-/* cmp-hdr : 기업 헤더 카드 (hdr = header 축약) */
-.cmp-hdr {
-    background: white;
-    padding: 40px 48px;
-    margin-bottom: 8px;
-}
+/* ---------------------- 상단 헤더 ---------------------- */
 
-/* cmp-hdr-inner : 헤더 내부 flex 컨테이너 */
-.cmp-hdr-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 32px;
-}
-
-/* cmp-hdr-meta : 좌측 메타 정보 영역 */
-.cmp-hdr-meta {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* cmp-hdr-meta-title : 브랜드명 + 회사명 행 */
-.cmp-hdr-meta-title {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-/* cmp-hdr-meta-brand : 브랜드 강조 텍스트 */
-.cmp-hdr-meta-brand {
-    font-size: 18px;
-    font-weight: 700;
-    color: #6c7fe8;
-}
-
-/* cmp-hdr-meta-name : 법인명 텍스트 */
-.cmp-hdr-meta-name {
-    font-size: 15px;
-    color: #555;
-}
-
-/* cmp-hdr-meta-tbl : 메타 정보 테이블 (tbl = table 축약) */
-.cmp-hdr-meta-tbl {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.cmp-hdr-meta-tbl td {
-    padding: 4px 12px 4px 0;
-    font-size: 13px;
-    vertical-align: top;
-    text-align: left;
-}
-
-/* cmp-hdr-meta-lbl : 테이블 레이블 셀 (lbl = label 축약) */
-.cmp-hdr-meta-lbl {
-    color: #888;
-    width: 90px;
-    white-space: nowrap;
-}
-
-/* cmp-hdr-divider : 메타 구분선 */
-.cmp-hdr-divider {
-    border: none;
-    border-top: 1px solid #e0e0e0;
-    margin: 14px 0;
-    width: 100%;
-}
-
-/* cmp-hdr-logo : 우측 로고 박스 */
-.cmp-hdr-logo {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-}
-
-/* cmp-hdr-logo-img : 로고 이미지 플레이스홀더 */
-.cmp-hdr-logo-img {
-    width: 160px;
-    height: 140px;
-    background: #d0d0d0;
-    border-radius: 8px;
-}
-
-/* cmp-wrap : 본문 콘텐츠 래퍼 */
-.cmp-wrap {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 48px 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* cmp-sec : 각 콘텐츠 섹션 공통 (sec = section 축약) */
-.cmp-sec {
-    margin-top: 48px;
-    width: 100%;
-}
-
-/* cmp-sec-title : 섹션 제목 */
-.cmp-sec-title {
-    font-size: 22px;
-    font-weight: 700;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #333;
-    margin-bottom: 24px;
-}
-
-/* cmp-sec-body : 섹션 본문 래퍼 */
-.cmp-sec-body {
-    color: #444;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.cmp-sec-body p {
-    max-width: 720px;
-    text-align: left;
-}
-
-/* cmp-sec-sub : 섹션 내 소제목 */
-.cmp-sec-sub {
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #333;
-    text-align: center;
-}
-
-/* cmp-sec-list : 불릿 리스트 */
-.cmp-sec-list {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-    max-width: 720px;
-    text-align: left;
-}
-
-.cmp-sec-list li {
-    padding: 4px 0 4px 16px;
-    position: relative;
-    color: #555;
-}
-
-.cmp-sec-list li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #6c7fe8;
-}
-
-/* cmp-sec-hlgt : 강조 박스 (hlgt = highlight 축약) */
-.cmp-sec-hlgt {
-    background: #f5f7fb;
-    border-left: 4px solid #6c7fe8;
-    padding: 20px 24px;
-    border-radius: 4px;
-    margin-top: 16px;
-    max-width: 720px;
-    width: 100%;
-    text-align: left;
-}
-
-/* cmp-rct-grid : 채용 직군/우대사항 2열 그리드 (rct = recruit 축약) */
-.cmp-rct-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin-top: 24px;
-    width: 100%;
-    max-width: 720px;
-}
-
-/* cmp-rct-sub : 채용 소제목 */
-.cmp-rct-sub {
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-/* cmp-proc-steps : 채용 절차 스텝 컨테이너 (proc = process 축약) */
-.cmp-proc-steps {
+.companyInfo-hdr {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
-    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-/* cmp-proc-step : 개별 스텝 */
-.cmp-proc-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
+.companyInfo-title {
+    background: #6b83d6;
+    border-radius: 6px;
+    font-weight: bold;
+    overflow: hidden;
 }
 
-/* cmp-proc-step-num : 스텝 번호 원형 뱃지 */
-.cmp-proc-step-num {
-    width: 36px;
-    height: 36px;
-    background: #6c7fe8;
+.companyInfo-title a {
+    display: block;
     color: white;
-    border-radius: 50%;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.companyInfo-nav {
     display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 40px;
+    flex: 1;
+}
+
+.companyInfo-nav a {
+    background: #6b83d6;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.companyInfo-nav a:hover {
+    background: #5569c1;
+}
+
+.companyInfo-logout {
+    display: inline-block;
+    background: #6b83d6;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.companyInfo-logout:hover {
+    background: #5569c1;
+}
+
+/* ---------------------- 메인 ---------------------- */
+
+.companyInfo-main {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+/* ---------------------- 왼쪽 사이드바 ---------------------- */
+
+.companyInfo-leftbar {
+    width: 200px;
+    background: #adbbdb;
+    padding-top: 20px;
+}
+
+.companyInfo-left-item {
+    padding: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+    background: #adbbdb;
+}
+
+.companyInfo-left-item a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.companyInfo-left-item:hover {
+    background: #949fca;
+}
+
+.companyInfo-left-item:hover a {
+    color: white;
+}
+
+.companyInfo-left-item.companyInfo-active {
+    background: #8a8a8a;
+}
+
+.companyInfo-left-item.companyInfo-active a {
+    color: white;
     font-weight: 700;
-    font-size: 15px;
 }
 
-/* cmp-proc-step-lbl : 스텝 라벨 (lbl = label 축약) */
-.cmp-proc-step-lbl {
-    font-size: 12px;
-    color: #555;
-    text-align: center;
-}
+/* ---------------------- 오른쪽 콘텐츠 ---------------------- */
 
-/* cmp-proc-arrow : 스텝 간 화살표 */
-.cmp-proc-arrow {
-    color: #aaa;
-    font-size: 20px;
-    margin-bottom: 18px;
-}
-
-/* cmp-qna : QnA 섹션 */
-.cmp-qna {
-    margin-top: 48px;
-    margin-bottom: 20px;
-}
-
-/* cmp-qna-box : QnA 클릭 영역 박스 */
-.cmp-qna-box {
-    border: 2px solid #6c7fe8;
-    border-radius: 12px;
+.companyInfo-ct {
+    flex: 1;
+    background: white;
     padding: 40px;
+    min-height: 800px;
+}
+
+.companyInfo-topbox {
+    margin-bottom: 25px;
+}
+
+.companyInfo-subtitle {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+/* ---------------------- 검색 ---------------------- */
+
+.companyInfo-search {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.companyInfo-search input {
+    width: 280px;
+    height: 42px;
+    border-radius: 20px;
+    border: 1px solid #d0d0d0;
+    background: #f2f2f2;
     text-align: center;
+    outline: none;
+}
+
+.companyInfo-search button {
+    background: #6b83d6;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
     cursor: pointer;
 }
 
-.cmp-qna-box:hover {
-    background: #f0f3ff;
+.companyInfo-search button:hover {
+    background: #5569c1;
 }
 
-/* cmp-qna-title : QnA 박스 제목 */
-.cmp-qna-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #6c7fe8;
-    margin-bottom: 8px;
+/* ---------------------- 테이블 ---------------------- */
+
+.companyInfo-tblHead {
+    display: grid;
+    grid-template-columns: 80px 90px 180px 120px 1fr;
+    align-items: center;
+    font-weight: bold;
+    padding: 14px 0;
+    border-bottom: 2px solid #dcdcdc;
 }
 
-/* cmp-qna-sub : QnA 박스 부제목 */
-.cmp-qna-sub {
-    font-size: 14px;
-    color: #888;
+.companyInfo-row {
+    display: grid;
+    grid-template-columns: 80px 90px 180px 120px 1fr;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #ececec;
+}
+
+.col1,
+.col2,
+.col3,
+.col4,
+.col5 {
+    text-align: center;
+    word-break: keep-all;
+}
+
+.col5 {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.companyInfo-empty {
+    padding: 80px 0;
+    text-align: center;
+    color: #666666;
+    border-bottom: 1px solid #ececec;
+}
+
+/* ---------------------- 페이지네이션 ---------------------- */
+
+.companyInfo-page {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.companyInfo-page a,
+.companyInfo-page span {
+    text-decoration: none;
+    color: inherit;
+}
+
+.companyInfo-page a {
+    cursor: pointer;
+}
+
+.companyInfo-page .active {
+    color: #4c6ef5;
+    font-weight: bold;
+}
+
+.companyInfo-page-disabled {
+    color: #aaaaaa;
+}
+
+/* ---------------------- 삭제 버튼 ---------------------- */
+
+.companyInfo-del {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.companyInfo-del button {
+    background: #d87c7c;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.companyInfo-del button:hover {
+    background: #c86b6b;
 }

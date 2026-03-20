@@ -194,14 +194,18 @@
 
 	<!-- 기업회원 마이페이지 - 로그인한 기업회원(userNumber) 기준 답변대기 Q&A 글 총 개수 -->
 	<select id="compQnaTotal" parameterType="int" resultType="int">
-		SELECT COUNT(*)
+		SELECT
+		COUNT(*)
 		FROM TBL_POST P
 		JOIN TBL_COMPANY_MEMBER CM
-		ON P.COMPANY_NUMBER = CM.COMPANY_NUMBER
+		ON P.COMPANY_NUMBER =
+		CM.COMPANY_NUMBER
 		WHERE P.POST_TYPE = 'QNA_POST'
-		AND P.ANSWER_STATUS = '답변대기'
+		AND P.ANSWER_STATUS =
+		'답변대기'
 		AND CM.USER_NUMBER = #{userNumber}
-		AND CM.COMPANY_MANAGER_STATE = 'ACTIVE'
+		AND CM.COMPANY_MANAGER_STATE =
+		'ACTIVE'
 	</select>
 
 	<!-- 기업회원 마이페이지 - 정보수정 전 비밀번호 확인 -->
@@ -388,7 +392,9 @@
 
 	<!-- 기업회원 마이페이지 - 기업정보페이지 수정(기업소개 수정) -->
 	<!-- 사용 페이지 : companyPageEdit.jsp -->
-	<update id="updateCompInfo" parameterType="CompInfoDTO">
+	<!-- 기업회원 마이페이지 - 기업정보페이지 수정(기업소개 수정) -->
+	<!-- 사용 페이지 : companyPageEdit.jsp -->
+	<update id="updateCompInfo" parameterType="CompanyInfoDTO">
 		UPDATE TBL_COMP_INFO
 		SET COMP_CEO_NAME = #{compCeoName},
 		COMP_FND_YEAR = #{compFndYear},
