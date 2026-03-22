@@ -22,10 +22,10 @@ public class MainpageDAO {
         this.sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
     }
 
-    // 메인 상단 질문 1개 조회
+	// 메인 상단 질문 1개 조회
     public JobRecommendQuestionDTO selectMainQuestion(int jobQuestionNumber) {
-        System.out.println("메인 상단 질문 1개 조회");
-        return sqlSession.selectOne("main.selectMainQuestion", jobQuestionNumber);
+    	System.out.println("메인 상단 질문 1개 조회");
+            return sqlSession.selectOne("main.selectMainQuestion", jobQuestionNumber);
     }
 
     // 메인 질문 총 개수 조회

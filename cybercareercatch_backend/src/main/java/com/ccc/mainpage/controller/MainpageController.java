@@ -24,7 +24,8 @@ public class MainpageController implements Execute {
 	private static final int MAX_QUESTION_COUNT = 10;
 
 	@Override
-	public Result execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public Result execute(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		MainpageDAO mainpageDAO = new MainpageDAO();
 		Result result = new Result();
@@ -69,8 +70,7 @@ public class MainpageController implements Execute {
 		request.setAttribute("mainIsTestInProgress", session.getAttribute("mainJobResultNumber") != null);
 
 		if (isComplete) {
-			request.setAttribute("mainAlertMessage",
-					"답변이 완료 되었습니다. 결과는 3일~5일정도 소요됩니다. 마이페이지에서 확인하실 수 있습니다");
+			request.setAttribute("mainAlertMessage", "답변이 완료 되었습니다. 결과는 3일~5일정도 소요됩니다. 마이페이지에서 확인하실 수 있습니다");
 		} else if ("true".equals(request.getParameter("emptyAnswer"))) {
 			request.setAttribute("mainAlertMessage", "답변을 입력해주세요.");
 		} else if ("true".equals(request.getParameter("loginRequired"))) {

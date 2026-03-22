@@ -1,312 +1,172 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE html>
+
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberCareerCatch</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/company/company-info.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CyberCareerCatch</title>
+
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/main/company/company-ad.css">
+
 </head>
 
 <body>
-  <header></header>
 
-  <c:set var="qnaTargetUrl" value="${pageContext.request.contextPath}/member/login.mefc" />
-  <c:set var="qnaLoginRequired" value="true" />
+	<header></header>
 
-  <c:if test="${not empty sessionScope.memberNumber}">
-      <c:set var="userNumber" value="${sessionScope.memberNumber}" scope="session" />
-      <c:set var="qnaTargetUrl" value="${pageContext.request.contextPath}/app/main/qna/qna-list.jsp" />
-      <c:set var="qnaLoginRequired" value="false" />
-  </c:if>
 
-  <c:set var="logoSrc" value="" />
-  <c:if test="${not empty companyDetail.filePath}">
-      <c:choose>
-          <c:when test="${fn:startsWith(companyDetail.filePath, 'http://') or fn:startsWith(companyDetail.filePath, 'https://')}">
-              <c:set var="logoSrc" value="${companyDetail.filePath}" />
-          </c:when>
-          <c:when test="${fn:startsWith(companyDetail.filePath, '/')}">
-              <c:set var="logoSrc" value="${pageContext.request.contextPath}${companyDetail.filePath}" />
-          </c:when>
-          <c:otherwise>
-              <c:set var="logoSrc" value="${pageContext.request.contextPath}/${companyDetail.filePath}" />
-          </c:otherwise>
-      </c:choose>
-  </c:if>
 
-  <div class="cmp-wrap">
-    <!-- cmp-hdr : 기업 헤더 카드 -->
-    <section class="cmp-hdr">
-      <div class="cmp-hdr-inner">
-        <div class="cmp-hdr-meta">
-          <!-- cmp-hdr-meta-title : 브랜드+회사명 행 -->
-          <div class="cmp-hdr-meta-title">
-            <span class="cmp-hdr-meta-brand">CyberCareerCatch</span>
-            <span class="cmp-hdr-meta-name">
-              <c:choose>
-                <c:when test="${not empty companyDetail.companyName}">
-                  <c:out value="${companyDetail.companyName}" />
-                </c:when>
-                <c:otherwise>기업명 미등록</c:otherwise>
-              </c:choose>
-            </span>
-          </div>
+	<main class="ad-main">
 
-          <table class="cmp-hdr-meta-tbl">
-            <tr>
-              <td class="cmp-hdr-meta-lbl">대표자명</td>
-              <td>
-                <c:choose>
-                  <c:when test="${not empty companyDetail.compCeoName}">
-                    <c:out value="${companyDetail.compCeoName}" />
-                  </c:when>
-                  <c:otherwise>-</c:otherwise>
-                </c:choose>
-              </td>
+		<p class="ad-main-title">기업홍보페이지</p>
 
-              <td class="cmp-hdr-meta-lbl">설립년도</td>
-              <td>
-                <c:choose>
-                  <c:when test="${companyDetail.compFndYear gt 0}">
-                    ${companyDetail.compFndYear}
-                  </c:when>
-                  <c:otherwise>-</c:otherwise>
-                </c:choose>
-              </td>
-            </tr>
 
-            <tr>
-              <td class="cmp-hdr-meta-lbl">사원 수</td>
-              <td>
-                <c:choose>
-                  <c:when test="${companyDetail.compEmplCnt gt 0}">
-                    ${companyDetail.compEmplCnt}명
-                  </c:when>
-                  <c:otherwise>-</c:otherwise>
-                </c:choose>
-              </td>
 
-              <td class="cmp-hdr-meta-lbl">매출액</td>
-              <td>
-                <c:choose>
-                  <c:when test="${not empty companyDetail.compRev}">
-                    <c:out value="${companyDetail.compRev}" />
-                  </c:when>
-                  <c:otherwise>-</c:otherwise>
-                </c:choose>
-              </td>
-            </tr>
-          </table>
+		<div class="ad-sort-bar">
 
-          <hr class="cmp-hdr-divider"/>
+			<form class="ad-sort-form"
+				action="${pageContext.request.contextPath}/company/companyAd.cfc"
+				method="get">
 
-          <table class="cmp-hdr-meta-tbl">
-            <tr>
-              <td class="cmp-hdr-meta-lbl">사업자번호</td>
-              <td>
-                <c:choose>
-                  <c:when test="${not empty companyDetail.companyBrn}">
-                    <c:out value="${companyDetail.companyBrn}" />
-                  </c:when>
-                  <c:otherwise>-</c:otherwise>
-                </c:choose>
-              </td>
-            </tr>
+				<input type="hidden" name="sortType" value="latest"> <select
+					class="ad-sort-sel" name="jobNumber" aria-label="기업홍보 직군 필터">
 
-            <tr>
-              <td class="cmp-hdr-meta-lbl">기업형태</td>
-              <td>
-                <c:choose>
-                  <c:when test="${not empty companyDetail.compType}">
-                    <c:out value="${companyDetail.compType}" />
-                  </c:when>
-                  <c:otherwise>-</c:otherwise>
-                </c:choose>
-              </td>
-            </tr>
+					<option value=""
+						<c:if test="${empty companyCardQuery.jobNumber}">selected="selected"</c:if>>최신순</option>
 
-            <tr>
-              <td class="cmp-hdr-meta-lbl">대표 기술</td>
-              <td>
-                <c:choose>
-                  <c:when test="${not empty companyDetail.compTech}">
-                    <span style="white-space: pre-line;"><c:out value="${companyDetail.compTech}" /></span>
-                  </c:when>
-                  <c:otherwise>-</c:otherwise>
-                </c:choose>
-              </td>
-            </tr>
+					<option value="1"
+						<c:if test="${companyCardQuery.jobNumber eq 1}">selected="selected"</c:if>>보안컨설팅</option>
 
-            <tr>
-              <td class="cmp-hdr-meta-lbl">주요사업</td>
-              <td>
-                <c:choose>
-                  <c:when test="${not empty companyDetail.compMainBiz}">
-                    <span style="white-space: pre-line;"><c:out value="${companyDetail.compMainBiz}" /></span>
-                  </c:when>
-                  <c:otherwise>-</c:otherwise>
-                </c:choose>
-              </td>
-            </tr>
+					<option value="2"
+						<c:if test="${companyCardQuery.jobNumber eq 2}">selected="selected"</c:if>>시스템/네트워크/엔지니어</option>
 
-            <tr>
-              <td class="cmp-hdr-meta-lbl">회사위치</td>
-              <td>
-                <c:choose>
-                  <c:when test="${not empty companyDetail.companyAddress}">
-                    <span style="white-space: pre-line;"><c:out value="${companyDetail.companyAddress}" /></span>
-                  </c:when>
-                  <c:otherwise>-</c:otherwise>
-                </c:choose>
-              </td>
-            </tr>
-          </table>
-        </div>
+					<option value="3"
+						<c:if test="${companyCardQuery.jobNumber eq 3}">selected="selected"</c:if>>보안관제</option>
 
-        <div class="cmp-hdr-logo">
-          <div class="cmp-hdr-logo-img"
-               <c:if test="${not empty logoSrc}">
-                 style="background-image: url('${logoSrc}'); background-size: cover; background-position: center; background-repeat: no-repeat;"
-               </c:if>>
-          </div>
-        </div>
-      </div>
-    </section>
+					<option value="4"
+						<c:if test="${companyCardQuery.jobNumber eq 4}">selected="selected"</c:if>>침해사고/포렌식</option>
 
-    <!-- 기업 정보 -->
-    <section class="cmp-sec" id="sec-info">
-      <h2 class="cmp-sec-title">기업 정보</h2>
-      <div class="cmp-sec-body">
-        <p class="cmp-sec-sub">
-          <c:choose>
-            <c:when test="${not empty companyDetail.compSummary}">
-              <c:out value="${companyDetail.compSummary}" />
-            </c:when>
-            <c:otherwise>기업 한줄 소개가 아직 등록되지 않았습니다.</c:otherwise>
-          </c:choose>
-        </p>
+				</select>
 
-        <p style="white-space: pre-line;">
-          <c:choose>
-            <c:when test="${not empty companyDetail.compInfo}">
-              <c:out value="${companyDetail.compInfo}" />
-            </c:when>
-            <c:otherwise>기업 상세 소개가 아직 등록되지 않았습니다.</c:otherwise>
-          </c:choose>
-        </p>
+			</form>
 
-        <div class="cmp-sec-hlgt" style="white-space: pre-line;">
-          <c:choose>
-            <c:when test="${not empty companyDetail.compSummary}">
-              <p><strong><c:out value="${companyDetail.compSummary}" /></strong></p>
-            </c:when>
-            <c:otherwise>
-              <p><strong>기업 한줄 소개가 아직 등록되지 않았습니다.</strong></p>
-            </c:otherwise>
-          </c:choose>
-        </div>
-      </div>
-    </section>
+		</div>
 
-    <!-- 서비스 확장 및 운영 이력 -->
-    <section class="cmp-sec" id="sec-history">
-      <h2 class="cmp-sec-title">서비스 확장 및 운영 이력</h2>
-      <div class="cmp-sec-body">
-        <div class="cmp-sec-hlgt" style="white-space: pre-line;">
-          <c:choose>
-            <c:when test="${not empty companyDetail.compSvcHist}">
-              <c:out value="${companyDetail.compSvcHist}" />
-            </c:when>
-            <c:otherwise>서비스 확장 및 운영 이력이 아직 등록되지 않았습니다.</c:otherwise>
-          </c:choose>
-        </div>
-      </div>
-    </section>
 
-    <!-- 인재상 -->
-    <section class="cmp-sec" id="sec-talent">
-      <h2 class="cmp-sec-title">인재상</h2>
-      <div class="cmp-sec-body">
-        <div class="cmp-sec-hlgt" style="white-space: pre-line;">
-          <c:choose>
-            <c:when test="${not empty companyDetail.jobPostProfile}">
-              <c:out value="${companyDetail.jobPostProfile}" />
-            </c:when>
-            <c:otherwise>인재상이 아직 등록되지 않았습니다.</c:otherwise>
-          </c:choose>
-        </div>
-      </div>
-    </section>
 
-    <!-- 채용 부분 -->
-    <section class="cmp-sec" id="sec-recruit">
-      <h2 class="cmp-sec-title">채용 부분</h2>
-      <div class="cmp-sec-body">
-        <div class="cmp-sec-hlgt" style="white-space: pre-line;">
-          <c:choose>
-            <c:when test="${not empty companyDetail.jobPostContent}">
-              <c:out value="${companyDetail.jobPostContent}" />
-            </c:when>
-            <c:otherwise>채용 내용이 아직 등록되지 않았습니다.</c:otherwise>
-          </c:choose>
-        </div>
-      </div>
-    </section>
+		<div class="ad-grid">
 
-    <!-- 채용 절차 -->
-    <section class="cmp-sec" id="sec-process">
-      <h2 class="cmp-sec-title">채용 절차</h2>
-      <div class="cmp-sec-body">
-        <div class="cmp-sec-hlgt" style="white-space: pre-line;">
-          <c:choose>
-            <c:when test="${not empty companyDetail.jobPostProcess}">
-              <c:out value="${companyDetail.jobPostProcess}" />
-            </c:when>
-            <c:otherwise>채용 절차가 아직 등록되지 않았습니다.</c:otherwise>
-          </c:choose>
-        </div>
-      </div>
-    </section>
+			<c:choose>
 
-    <!-- 지원 방법 -->
-    <section class="cmp-sec" id="sec-apply">
-      <h2 class="cmp-sec-title">지원 방법</h2>
-      <div class="cmp-sec-body">
-        <div class="cmp-sec-hlgt" style="white-space: pre-line;">
-          <c:choose>
-            <c:when test="${not empty companyDetail.jobPostMethod}">
-              <c:out value="${companyDetail.jobPostMethod}" />
-            </c:when>
-            <c:otherwise>지원 방법이 아직 등록되지 않았습니다.</c:otherwise>
-          </c:choose>
-        </div>
-      </div>
-    </section>
+				<c:when test="${empty companyAdList}">
 
-    <!-- 기업 QnA -->
-    <section class="cmp-sec cmp-qna" id="sec-qna">
-      <div class="cmp-qna-box"
-           data-url="${qnaTargetUrl}"
-           data-login-required="${qnaLoginRequired}">
-        <p class="cmp-qna-title">기업 QnA 게시판</p>
+					<div class="ad-grid-card">등록된 기업홍보 정보가 없습니다.</div>
 
-        <c:choose>
-          <c:when test="${not empty sessionScope.memberNumber}">
-            <p class="cmp-qna-sub">기업 담당자와 대화해보세요!</p>
-          </c:when>
-          <c:otherwise>
-            <p class="cmp-qna-sub">로그인 후 이용할 수 있습니다.</p>
-          </c:otherwise>
-        </c:choose>
-      </div>
-    </section>
+				</c:when>
 
-  </div>
+				<c:otherwise>
 
-  <script src="${pageContext.request.contextPath}/assets/js/main/company/company-info.js"></script>
+					<c:forEach var="company" items="${companyAdList}">
+
+						<a
+							href="${pageContext.request.contextPath}/company/companyInfo.cfc?companyNumber=${company.companyNumber}"
+							class="ad-grid-link">
+
+							<div class="ad-grid-card">
+
+								<span class="ad-grid-card-name">${company.companyName}</span> <span
+									class="ad-grid-card-type">${company.compType}</span> <span
+									class="ad-grid-card-summary">${company.compSummary}</span> <span
+									class="ad-grid-card-meta">${company.compPageDate}</span>
+
+							</div>
+
+						</a>
+
+					</c:forEach>
+
+				</c:otherwise>
+
+			</c:choose>
+
+		</div>
+
+
+
+		<div class="ad-pg">
+
+			<c:choose>
+
+				<c:when test="${not empty companyAdDTO}">
+
+					<c:if test="${companyAdDTO.prev}">
+
+						<button type="button"
+							onclick="location.href='${pageContext.request.contextPath}/company/companyAd.cfc?page=${companyAdDTO.startPage - 1}&jobNumber=${companyCardQuery.jobNumber}&sortType=latest'">
+
+							&lt;</button>
+
+					</c:if>
+
+
+
+					<c:forEach var="i" begin="${companyAdDTO.startPage}"
+						end="${companyAdDTO.endPage}">
+
+						<button type="button"
+							class="${i eq companyAdDTO.page ? 'ad-pg-active' : ''}"
+							onclick="location.href='${pageContext.request.contextPath}/company/companyAd.cfc?page=${i}&jobNumber=${companyCardQuery.jobNumber}&sortType=latest'">
+
+							${i}</button>
+
+					</c:forEach>
+
+
+
+					<c:if test="${companyAdDTO.next}">
+
+						<button type="button"
+							onclick="location.href='${pageContext.request.contextPath}/company/companyAd.cfc?page=${companyAdDTO.endPage + 1}&jobNumber=${companyCardQuery.jobNumber}&sortType=latest'">
+
+							&gt;</button>
+
+					</c:if>
+
+				</c:when>
+
+
+
+				<c:otherwise>
+
+					<button type="button" class="ad-pg-active"
+						onclick="location.href='${pageContext.request.contextPath}/company/companyAd.cfc?page=1&sortType=latest'">
+
+						1</button>
+
+				</c:otherwise>
+
+			</c:choose>
+
+		</div>
+
+	</main>
+
+
+
+	<script
+		src="${pageContext.request.contextPath}/assets/js/main/company/company-ad.js"></script>
+
 </body>
+
 </html>
+,
