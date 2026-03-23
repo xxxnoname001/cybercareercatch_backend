@@ -20,11 +20,9 @@
 </script>
 
 <body>
-    <header></header>
+    <jsp:include page="/app/main/header/header-logout.jsp" />
 
     <main class="expo-main">
-
-        <!-- 캘린더 -->
         <section class="expo-cal">
             <div class="expo-cal-hdr">
                 <button class="expo-cal-btn" id="prevMonth">&#8249;</button>
@@ -41,7 +39,6 @@
             <div id="calendar"></div>
         </section>
 
-        <!-- 박람회 상세 -->
         <section class="expo-list">
             <div class="expo-info-box">
                 <div class="expo-info-head">
@@ -65,8 +62,9 @@
                 <p><strong>기업 신청은 박람회 개최일 전 10일 까지 입니다</strong></p>
             </div>
         </section>
-
     </main>
+
+    <jsp:include page="/app/main/footer/footer.jsp" />
 
     <script src="${pageContext.request.contextPath}/assets/js/main/expo/expo-calendar.js"></script>
 </body>
