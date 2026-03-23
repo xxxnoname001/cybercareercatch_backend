@@ -6,10 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberCareerCatch</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/header/header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/company/company-ad.css">
 </head>
 <body>
-    <header></header>
+
+    <jsp:include page="/app/main/header/header-logout.jsp" />
 
     <main class="ad-main">
         <p class="ad-main-title">기업홍보페이지</p>

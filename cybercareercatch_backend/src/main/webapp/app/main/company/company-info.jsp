@@ -1,12 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <%
-    if (request.getAttribute("companyDetail") == null) {
-        response.sendRedirect(request.getContextPath() + "/company/companyAd.cfc");
-        return;
-    }
+if (request.getAttribute("companyDetail") == null) {
+	response.sendRedirect(request.getContextPath() + "/company/companyAd.cfc");
+	return;
+}
 %>
 
 <!DOCTYPE html>
@@ -15,12 +16,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CyberCareerCatch</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/main/header/header.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/main/company/company-info.css">
 </head>
 
 <body>
-	<header></header>
+
+	<jsp:include page="/app/main/header/header-logout.jsp" />
 
 	<c:set var="isLoggedIn"
 		value="${not empty sessionScope.user or not empty sessionScope.memberNumber}" />
@@ -57,9 +68,8 @@
 			<div class="cmp-hdr-inner">
 				<div class="cmp-hdr-meta">
 					<div class="cmp-hdr-meta-title">
-						<span class="cmp-hdr-meta-brand">CyberCareerCatch</span>
-						<span class="cmp-hdr-meta-name">
-							<c:choose>
+						<span class="cmp-hdr-meta-brand">CyberCareerCatch</span> <span
+							class="cmp-hdr-meta-name"> <c:choose>
 								<c:when test="${not empty companyDetail.companyName}">
 									<c:out value="${companyDetail.companyName}" />
 								</c:when>
@@ -71,46 +81,41 @@
 					<table class="cmp-hdr-meta-tbl">
 						<tr>
 							<td class="cmp-hdr-meta-lbl">대표자명</td>
-							<td>
-								<c:choose>
+							<td><c:choose>
 									<c:when test="${not empty companyDetail.compCeoName}">
 										<c:out value="${companyDetail.compCeoName}" />
 									</c:when>
 									<c:otherwise>-</c:otherwise>
-								</c:choose>
-							</td>
+								</c:choose></td>
 
 							<td class="cmp-hdr-meta-lbl">설립년도</td>
-							<td>
-								<c:choose>
+							<td><c:choose>
 									<c:when test="${companyDetail.compFndYear gt 0}">
 										${companyDetail.compFndYear}
 									</c:when>
 									<c:otherwise>-</c:otherwise>
-								</c:choose>
-							</td>
+								</c:choose></td>
 						</tr>
 
 						<tr>
 							<td class="cmp-hdr-meta-lbl">사원 수</td>
-							<td>
-								<c:choose>
+							<td><c:choose>
 									<c:when test="${companyDetail.compEmplCnt gt 0}">
 										${companyDetail.compEmplCnt}명
 									</c:when>
 									<c:otherwise>-</c:otherwise>
-								</c:choose>
-							</td>
+								</c:choose></td>
 
 							<td class="cmp-hdr-meta-lbl">매출액</td>
-							<td>
-								<c:choose>
-									<c:when test="${companyDetail.compRev gt 0}">
-										${companyDetail.compRev}
-									</c:when>
+							<td><c:choose>
+									<c:choose>
+										<c:when test="${not empty companyDetail.compRev}">
+											<c:out value="${companyDetail.compRev}" />
+										</c:when>
+										<c:otherwise>-</c:otherwise>
+									</c:choose>
 									<c:otherwise>-</c:otherwise>
-								</c:choose>
-							</td>
+								</c:choose></td>
 						</tr>
 					</table>
 
@@ -119,62 +124,55 @@
 					<table class="cmp-hdr-meta-tbl">
 						<tr>
 							<td class="cmp-hdr-meta-lbl">사업자번호</td>
-							<td>
-								<c:choose>
+							<td><c:choose>
 									<c:when test="${not empty companyDetail.companyBrn}">
 										<c:out value="${companyDetail.companyBrn}" />
 									</c:when>
 									<c:otherwise>-</c:otherwise>
-								</c:choose>
-							</td>
+								</c:choose></td>
 						</tr>
 
 						<tr>
 							<td class="cmp-hdr-meta-lbl">기업형태</td>
-							<td>
-								<c:choose>
+							<td><c:choose>
 									<c:when test="${not empty companyDetail.compType}">
 										<c:out value="${companyDetail.compType}" />
 									</c:when>
 									<c:otherwise>-</c:otherwise>
-								</c:choose>
-							</td>
+								</c:choose></td>
 						</tr>
 
 						<tr>
 							<td class="cmp-hdr-meta-lbl">대표 기술</td>
-							<td>
-								<c:choose>
+							<td><c:choose>
 									<c:when test="${not empty companyDetail.compTech}">
-										<span style="white-space: pre-line;"><c:out value="${companyDetail.compTech}" /></span>
+										<span style="white-space: pre-line;"><c:out
+												value="${companyDetail.compTech}" /></span>
 									</c:when>
 									<c:otherwise>-</c:otherwise>
-								</c:choose>
-							</td>
+								</c:choose></td>
 						</tr>
 
 						<tr>
 							<td class="cmp-hdr-meta-lbl">주요사업</td>
-							<td>
-								<c:choose>
+							<td><c:choose>
 									<c:when test="${not empty companyDetail.compMainBiz}">
-										<span style="white-space: pre-line;"><c:out value="${companyDetail.compMainBiz}" /></span>
+										<span style="white-space: pre-line;"><c:out
+												value="${companyDetail.compMainBiz}" /></span>
 									</c:when>
 									<c:otherwise>-</c:otherwise>
-								</c:choose>
-							</td>
+								</c:choose></td>
 						</tr>
 
 						<tr>
 							<td class="cmp-hdr-meta-lbl">회사위치</td>
-							<td>
-								<c:choose>
+							<td><c:choose>
 									<c:when test="${not empty companyDetail.companyAddress}">
-										<span style="white-space: pre-line;"><c:out value="${companyDetail.companyAddress}" /></span>
+										<span style="white-space: pre-line;"><c:out
+												value="${companyDetail.companyAddress}" /></span>
 									</c:when>
 									<c:otherwise>-</c:otherwise>
-								</c:choose>
-							</td>
+								</c:choose></td>
 						</tr>
 					</table>
 				</div>
@@ -213,10 +211,14 @@
 				<div class="cmp-sec-hlgt" style="white-space: pre-line;">
 					<c:choose>
 						<c:when test="${not empty companyDetail.compSummary}">
-							<p><strong><c:out value="${companyDetail.compSummary}" /></strong></p>
+							<p>
+								<strong><c:out value="${companyDetail.compSummary}" /></strong>
+							</p>
 						</c:when>
 						<c:otherwise>
-							<p><strong>기업 한줄 소개가 아직 등록되지 않았습니다.</strong></p>
+							<p>
+								<strong>기업 한줄 소개가 아직 등록되지 않았습니다.</strong>
+							</p>
 						</c:otherwise>
 					</c:choose>
 				</div>
@@ -294,9 +296,8 @@
 		</section>
 
 		<section class="cmp-sec cmp-qna" id="sec-qna">
-			<div class="cmp-qna-box"
-			     data-url="${qnaTargetUrl}"
-			     data-login-required="${qnaLoginRequired}">
+			<div class="cmp-qna-box" data-url="${qnaTargetUrl}"
+				data-login-required="${qnaLoginRequired}">
 				<p class="cmp-qna-title">기업 QnA 게시판</p>
 
 				<c:choose>
@@ -311,6 +312,7 @@
 		</section>
 	</div>
 
-	<script src="${pageContext.request.contextPath}/assets/js/main/company/company-info.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/assets/js/main/company/company-info.js"></script>
 </body>
 </html>
