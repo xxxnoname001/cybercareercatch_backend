@@ -176,18 +176,22 @@
 		WHERE ROWNUM &lt;= 5
 	</select>
 
-	<!-- 메인 박람회 일정 조회 -->
+	<!-- 메인 박람회 일정 등록 최신순 3개 조회 -->
 	<select id="selectMainExpoList" resultType="ExpoListDTO">
-		SELECT
-		EXPO_NUMBER AS expoNumber,
-		EXPO_NAME AS expoName,
-		TO_CHAR(START_DATE, 'YYYY-MM-DD') AS startDate,
-		TO_CHAR(END_DATE, 'YYYY-MM-DD') AS endDate,
-		LOCATION AS location,
-		TO_CHAR(REG_DATE, 'YYYY-MM-DD') AS regDate
-		FROM TBL_EXPO
-		WHERE END_DATE >= TRUNC(SYSDATE)
-		ORDER BY START_DATE ASC, EXPO_NUMBER ASC
+		SELECT *
+		FROM (
+			SELECT
+				EXPO_NUMBER AS expoNumber,
+				EXPO_NAME AS expoName,
+				TO_CHAR(START_DATE, 'YYYY-MM-DD') AS startDate,
+				TO_CHAR(END_DATE, 'YYYY-MM-DD') AS endDate,
+				LOCATION AS location,
+				TO_CHAR(REG_DATE, 'YYYY-MM-DD') AS regDate
+			FROM TBL_EXPO
+			WHERE END_DATE &gt;= TRUNC(SYSDATE)
+			ORDER BY REG_DATE DESC, EXPO_NUMBER DESC
+		)
+		WHERE ROWNUM &lt;= 3
 	</select>
 
 </mapper>

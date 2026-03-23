@@ -6,11 +6,98 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchImg = document.getElementById("searchimg");
     const hiddenSubmitButton = document.getElementById("mainpage-hidden-submit");
 
+    const answerLengthModal = document.getElementById("mainpage-answer-length-modal");
+    const answerLengthModalMessage = document.getElementById("mainpage-answer-modal-message");
+    const answerLengthModalClose = document.getElementById("mainpage-answer-modal-close");
+    const answerLengthModalConfirm = document.getElementById("mainpage-answer-modal-confirm");
+
+    const ANSWER_MAX_LENGTH = 1000;
     let isSubmitting = false;
+
+    function openAnswerLengthModal(message) {
+        if (!answerLengthModal || !answerLengthModalMessage) {
+            alert(message);
+            return;
+        }
+
+        answerLengthModalMessage.textContent = message;
+        answerLengthModal.classList.add("show");
+        answerLengthModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeAnswerLengthModal() {
+        if (!answerLengthModal) {
+            return;
+        }
+
+        answerLengthModal.classList.remove("show");
+        answerLengthModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+
+    function enforceAnswerMaxLength() {
+        if (!answerInput) {
+            return;
+        }
+
+        if (answerInput.value.length > ANSWER_MAX_LENGTH) {
+            answerInput.value = answerInput.value.slice(0, ANSWER_MAX_LENGTH);
+            openAnswerLengthModal("1000자 이내로 입력해주세요.");
+        }
+    }
 
     if (answerInput) {
         answerInput.focus();
+
+        answerInput.addEventListener("input", function () {
+            enforceAnswerMaxLength();
+        });
+
+        answerInput.addEventListener("paste", function () {
+            setTimeout(function () {
+                enforceAnswerMaxLength();
+            }, 0);
+        });
     }
+
+    if (answerLengthModalClose) {
+        answerLengthModalClose.addEventListener("click", function () {
+            closeAnswerLengthModal();
+            if (answerInput) {
+                answerInput.focus();
+            }
+        });
+    }
+
+    if (answerLengthModalConfirm) {
+        answerLengthModalConfirm.addEventListener("click", function () {
+            closeAnswerLengthModal();
+            if (answerInput) {
+                answerInput.focus();
+            }
+        });
+    }
+
+    if (answerLengthModal) {
+        answerLengthModal.addEventListener("click", function (event) {
+            if (event.target === answerLengthModal) {
+                closeAnswerLengthModal();
+                if (answerInput) {
+                    answerInput.focus();
+                }
+            }
+        });
+    }
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && answerLengthModal && answerLengthModal.classList.contains("show")) {
+            closeAnswerLengthModal();
+            if (answerInput) {
+                answerInput.focus();
+            }
+        }
+    });
 
     if (companyAdMoreLink) {
         companyAdMoreLink.addEventListener("click", function () {
@@ -35,6 +122,14 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!answerValue) {
                 event.preventDefault();
                 alert("답변을 입력해주세요.");
+                answerInput.focus();
+                return;
+            }
+
+            if (answerInput.value.length > ANSWER_MAX_LENGTH) {
+                event.preventDefault();
+                answerInput.value = answerInput.value.slice(0, ANSWER_MAX_LENGTH);
+                openAnswerLengthModal("1000자 이내로 입력해주세요.");
                 answerInput.focus();
                 return;
             }
