@@ -110,6 +110,94 @@
             text-align: center !important;
             margin-top: 14px !important;
         }
+
+        /* 직군검사 1000자 제한 모달 */
+        .mainpage-answer-modal {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 99999;
+            padding: 20px;
+        }
+
+        .mainpage-answer-modal.show {
+            display: flex;
+        }
+
+        .mainpage-answer-modal-box {
+            width: 100%;
+            max-width: 380px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+            overflow: hidden;
+            animation: answerModalPop 0.18s ease-out;
+        }
+
+        @keyframes answerModalPop {
+            from {
+                transform: translateY(10px) scale(0.97);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .mainpage-answer-modal-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px 12px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .mainpage-answer-modal-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111111;
+        }
+
+        .mainpage-answer-modal-close {
+            border: none;
+            background: transparent;
+            font-size: 24px;
+            line-height: 1;
+            cursor: pointer;
+            color: rgba(0, 0, 0, 0.45);
+        }
+
+        .mainpage-answer-modal-body {
+            padding: 24px 20px 18px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(0, 0, 0, 0.75);
+            text-align: center;
+        }
+
+        .mainpage-answer-modal-foot {
+            padding: 0 20px 20px;
+        }
+
+        .mainpage-answer-modal-confirm {
+            width: 100%;
+            height: 46px;
+            border: none;
+            border-radius: 12px;
+            background: #4E77FF;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .mainpage-answer-modal-confirm:hover {
+            filter: brightness(0.97);
+        }
     </style>
 </head>
 
@@ -137,7 +225,7 @@
             </div>
 
             <div style="font-size:14px; color:#4E77FF; text-align:center; font-weight:600; background:rgba(78, 119, 255, 0.08); padding:10px 16px; border-radius:999px;">
-                질문에 대한 답변은 회원만 받아 볼 수 있습니다.
+                답변에 대한 결과는 회원만 마이페이지에서 확인 가능합니다.
             </div>
 
             <div class="mainpage-searchjob-question" id="question">
@@ -415,6 +503,22 @@
                         </c:choose>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1000자 제한 모달 -->
+    <div id="mainpage-answer-length-modal" class="mainpage-answer-modal" aria-hidden="true">
+        <div class="mainpage-answer-modal-box" role="dialog" aria-modal="true" aria-labelledby="mainpage-answer-modal-title">
+            <div class="mainpage-answer-modal-head">
+                <div id="mainpage-answer-modal-title" class="mainpage-answer-modal-title">안내</div>
+                <button type="button" id="mainpage-answer-modal-close" class="mainpage-answer-modal-close" aria-label="닫기">×</button>
+            </div>
+            <div id="mainpage-answer-modal-message" class="mainpage-answer-modal-body">
+                1000자 이내로 입력해주세요.
+            </div>
+            <div class="mainpage-answer-modal-foot">
+                <button type="button" id="mainpage-answer-modal-confirm" class="mainpage-answer-modal-confirm">확인</button>
             </div>
         </div>
     </div>
