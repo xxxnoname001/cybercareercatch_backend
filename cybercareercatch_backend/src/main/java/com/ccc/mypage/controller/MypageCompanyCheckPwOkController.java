@@ -22,27 +22,30 @@ public class MypageCompanyCheckPwOkController implements Execute {
 		HttpSession session = request.getSession();
 		MypageDAO mypageDAO = new MypageDAO();
 
-		// 로그인 정보 확인
 		Integer userNumber = (Integer) session.getAttribute("userNumber");
 		String userType = (String) session.getAttribute("userType");
-
+		
+		//테스트용 - 삭제
+		session.setAttribute("userNumber", 51);
+		session.setAttribute("userType", "기업회원");
+		
 		System.out.println("로그인한 회원 번호 : " + userNumber);
 		System.out.println("로그인한 회원 타입 : " + userType);
-
-		// 비로그인
+		
+		// 로그인 안 된 경우
 		if (userNumber == null) {
+			result.setRedirect(true);
 			result.setPath(request.getContextPath() + "/member/login.mefc");
-			result.setRedirect(true);
 			return result;
 		}
 
-		// 기업회원 아님
-		if (!"기업회원".equals(userType)) {
-			result.setPath(request.getContextPath() + "/main/main.mafc");
+		// 기업회원이 아니면 접근 불가
+		if (userType == null || !userType.equals("기업회원")) {
 			result.setRedirect(true);
+			result.setPath(request.getContextPath() + "/mainpage/mainpage.mafc");
 			return result;
 		}
-
+		
 		String userPw = request.getParameter("userPw");
 
 		// 공백 체크

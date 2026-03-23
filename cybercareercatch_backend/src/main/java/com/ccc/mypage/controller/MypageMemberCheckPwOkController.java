@@ -21,11 +21,16 @@ public class MypageMemberCheckPwOkController implements Execute{
 		Result result = new Result();
 		HttpSession session = request.getSession();
 		
-		//로그인 정보 확인
 		Integer userNumber = (Integer) session.getAttribute("userNumber");
-		System.out.println("로그인한 회원 번호 : " + userNumber);
 		String userType = (String) session.getAttribute("userType");
+		
+		//테스트용 - 삭제
+		session.setAttribute("userNumber", 1);
+		session.setAttribute("userType", "일반회원");
+		
+		System.out.println("로그인한 회원 번호 : " + userNumber);
 		System.out.println("로그인한 회원 타입 : " + userType);
+		
 		
 		// 비로그인
 		if (userNumber == null) {
@@ -34,9 +39,9 @@ public class MypageMemberCheckPwOkController implements Execute{
 			return result;
 		}
 
-		// 일반회원 아님
+		// 일반회원이 아님
 		if (!"일반회원".equals(userType)) {
-			result.setPath(request.getContextPath() + "/main/main.mafc");
+			result.setPath(request.getContextPath() + "/mainpage/mainpage.mafc");
 			result.setRedirect(true);
 			return result;
 		}

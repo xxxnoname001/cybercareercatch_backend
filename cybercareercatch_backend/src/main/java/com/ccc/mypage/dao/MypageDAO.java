@@ -7,10 +7,11 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.ccc.common.config.MyBatisConfig;
-import com.ccc.company.dto.CompanyInfoDTO;
 import com.ccc.company.dto.CompanyDetailDTO;
+import com.ccc.company.dto.CompanyInfoDTO;
 import com.ccc.company.dto.FileDTO;
 import com.ccc.company.dto.JobPostDTO;
+import com.ccc.job.dto.JobGroupDTO;
 import com.ccc.mypage.dto.CompanyMypageInfoDTO;
 import com.ccc.mypage.dto.MemberMypageInfoDTO;
 import com.ccc.mypage.dto.MypageQnaListDTO;
@@ -95,9 +96,9 @@ public class MypageDAO {
 	}
 
 	// 기업회원 답변대기 Q&A글 총 개수
-	public int compQnaTotal(int companyNumber) {
+	public int compQnaTotal(int userNumber) {
 		System.out.println("기업회원 답변대기 Q&A글 총 개수");
-		return sqlSession.selectOne("mypage.compQnaTotal", companyNumber);
+		return sqlSession.selectOne("mypage.compQnaTotal", userNumber);
 	}
 	
 	// 기업회원 답변대기 Q&A 조회
@@ -196,5 +197,10 @@ public class MypageDAO {
 
 	public void deleteCompInfoByUserNumber(int userNumber) {
 		sqlSession.delete("mypage.deleteCompInfoByUserNumber", userNumber);
+	}
+	
+	// 직군조회
+	public List<JobGroupDTO> selectJobGroupList() {
+		return sqlSession.selectList("mypage.selectJobGroupList");
 	}
 }

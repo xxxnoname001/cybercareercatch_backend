@@ -18,6 +18,7 @@
 <script>
     const contextPath = "${pageContext.request.contextPath}";
 </script>
+
 <body>
     <header></header>
 

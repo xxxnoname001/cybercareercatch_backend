@@ -68,7 +68,7 @@
 							<input type="text" name="userPhone" class="mypage-info-text"
 								id="company-manager-phonenumber"
 								value="${companyMypageInfoDTO.userPhone}"
-								placeholder="01012345678" maxlength="11">
+								placeholder="전화번호입력(-제외)" maxlength="11" required>
 							<div class="input-message" id="company-phonenumber-message">${phoneMessage}</div>
 						</div>
 						<button type="button" class="btn"
@@ -79,7 +79,7 @@
 						<div class="mypage-info-title">인증번호</div>
 						<div class="mypage-input-wrap">
 							<input type="text" name="authCode" class="mypage-info-text"
-								id="company-verificationcode" placeholder="인증번호" maxlength="6">
+								id="company-verificationcode" placeholder="인증번호" maxlength="6" required>
 							<div class="input-message" id="company-verificationcode-message">${authMessage}</div>
 						</div>
 						<button type="button" class="btn"
@@ -88,7 +88,8 @@
 
 					<div class="mypage-button-box">
 						<button type="submit" class="btn" id="mypage-edit-btn">수정</button>
-						<button type="button" class="btn" id="mypage-editcancel-btn">취소</button>
+						<button type="button" class="btn" id="mypage-editcancel-btn"
+							data-move-url="${pageContext.request.contextPath}/company/mypage.mpfc">취소</button>
 					</div>
 				</div>
 			</form>
@@ -104,19 +105,16 @@
 						<div class="mypage-info-title">현재 비밀번호</div>
 						<div class="mypage-input-wrap">
 							<input type="password" name="currentUserPw"
-								class="mypage-info-text" id="company-current-pw">
+								class="mypage-info-text" id="company-current-pw" required>
 							<div class="input-message" id="company-current-pw-message">${currentPwMessage}</div>
 						</div>
-						<button type="submit" class="btn" id="company-currentpwcheck-btn"
-							formaction="${pageContext.request.contextPath}/company/mypage/checkCurrentPw.mpfc"
-							formmethod="post">확인</button>
 					</div>
 
 					<div class="mypage-info-box">
 						<div class="mypage-info-title">변경할 비밀번호</div>
 						<div class="mypage-input-wrap">
 							<input type="password" name="newUserPw" class="mypage-info-text"
-								id="company-change-pw">
+								id="company-change-pw" required>
 							<div class="input-message" id="company-change-pw-message">${newPwMessage}</div>
 						</div>
 					</div>
@@ -125,22 +123,21 @@
 						<div class="mypage-info-title">변경할 비밀번호 확인</div>
 						<div class="mypage-input-wrap">
 							<input type="password" name="newUserPwConfirm"
-								class="mypage-info-text" id="company-check-pw">
+								class="mypage-info-text" id="company-check-pw" required>
 							<div class="input-message" id="company-check-pw-message">${newPwConfirmMessage}</div>
 						</div>
-						<button type="button" class="btn" id="company-changepwcheck-btn">확인</button>
 					</div>
 				</div>
 
 				<div class="mypage-button-box">
 					<button type="submit" class="btn" id="mypage-pwedit-btn">수정</button>
-					<button type="button" class="btn" id="mypage-pwcancel-btn">취소</button>
+					<button type="button" class="btn" id="mypage-pwcancel-btn"
+						data-move-url="${pageContext.request.contextPath}/company/mypage.mpfc">취소</button>
 				</div>
 			</form>
 
 			<div class="company-quit-wrap">
-				<a
-					href="${pageContext.request.contextPath}/company/mypage/quit.mpfc"
+				<a href="${pageContext.request.contextPath}/company/mypage/quit.mpfc"
 					class="btn" id="company-quit">회원탈퇴</a>
 			</div>
 		</div>

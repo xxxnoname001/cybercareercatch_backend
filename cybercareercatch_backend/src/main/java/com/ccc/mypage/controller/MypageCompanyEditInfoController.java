@@ -23,24 +23,27 @@ public class MypageCompanyEditInfoController implements Execute {
 		Result result = new Result();
 		HttpSession session = request.getSession();
 
-		// 로그인 정보 확인
 		Integer userNumber = (Integer) session.getAttribute("userNumber");
-		System.out.println("로그인한 회원 번호 : " + userNumber);
-
 		String userType = (String) session.getAttribute("userType");
+		
+		//테스트용 - 삭제
+		session.setAttribute("userNumber", 51);
+		session.setAttribute("userType", "기업회원");
+		
+		System.out.println("로그인한 회원 번호 : " + userNumber);
 		System.out.println("로그인한 회원 타입 : " + userType);
-
-		// 비로그인
+		
+		// 로그인 안 된 경우
 		if (userNumber == null) {
-			result.setPath(request.getContextPath() + "/member/login.mefc");
 			result.setRedirect(true);
+			result.setPath(request.getContextPath() + "/member/login.mefc");
 			return result;
 		}
 
-		// 기업회원 아님
-		if (!"기업회원".equals(userType)) {
-			result.setPath(request.getContextPath() + "/main/main.mafc");
+		// 기업회원이 아니면 접근 불가
+		if (userType == null || !userType.equals("기업회원")) {
 			result.setRedirect(true);
+			result.setPath(request.getContextPath() + "/mainpage/mainpage.mafc");
 			return result;
 		}
 
@@ -54,9 +57,16 @@ public class MypageCompanyEditInfoController implements Execute {
 
 		// 기업회원 기본정보 조회
 		CompanyMypageInfoDTO companyMypageInfoDTO = mypageDAO.selectCompanyMemberMypageInfo(userNumber);
+
+		// 조회 실패 시 마이페이지로 돌려보내기
+		if (companyMypageInfoDTO == null) {
+			result.setPath(request.getContextPath() + "/company/mypage.mpfc");
+			result.setRedirect(true);
+			return result;
+		}
+
 		request.setAttribute("companyMypageInfoDTO", companyMypageInfoDTO);
 
-		
 		result.setPath("/app/main/mypage/mypage-company-edit.jsp");
 		result.setRedirect(false);
 

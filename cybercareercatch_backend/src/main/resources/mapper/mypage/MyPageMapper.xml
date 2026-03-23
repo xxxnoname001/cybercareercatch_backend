@@ -204,7 +204,7 @@
 		WHERE P.POST_TYPE = 'QNA_POST'
 		AND P.ANSWER_STATUS =
 		'답변대기'
-		AND CM.USER_NUMBER = #{userNumber}
+		AND CM.USER_NUMBER = #{value}
 		AND CM.COMPANY_MANAGER_STATE =
 		'ACTIVE'
 	</select>
@@ -452,30 +452,36 @@
 
 	<!-- 기업회원 마이페이지 - 기업정보페이지 삭제 -->
 	<delete id="deleteJobPostByUserNumber" parameterType="int">
-		DELETE FROM TBL_JOB_POST
+		DELETE FROM
+		TBL_JOB_POST
 		WHERE COMPANY_NUMBER = (
 		SELECT COMPANY_NUMBER
-		FROM TBL_COMPANY_MEMBER
+		FROM
+		TBL_COMPANY_MEMBER
 		WHERE
 		USER_NUMBER = #{value}
 		)
 	</delete>
 
 	<delete id="deleteFileByUserNumber" parameterType="int">
-		DELETE FROM TBL_FILE
+		DELETE FROM
+		TBL_FILE
 		WHERE COMPANY_NUMBER = (
 		SELECT COMPANY_NUMBER
-		FROM TBL_COMPANY_MEMBER
+		FROM
+		TBL_COMPANY_MEMBER
 		WHERE
 		USER_NUMBER = #{value}
 		)
 	</delete>
 
 	<delete id="deleteCompInfoByUserNumber" parameterType="int">
-		DELETE FROM TBL_COMP_INFO
+		DELETE
+		FROM TBL_COMP_INFO
 		WHERE COMPANY_NUMBER = (
 		SELECT COMPANY_NUMBER
-		FROM TBL_COMPANY_MEMBER
+		FROM
+		TBL_COMPANY_MEMBER
 		WHERE
 		USER_NUMBER = #{value}
 		)
@@ -496,4 +502,13 @@
 		WHERE USER_NUMBER = #{value}
 		AND USER_TYPE = '기업회원'
 	</delete>
+
+	<!-- 직군조회 -->
+	<select id="selectJobGroupList" resultType="JobGroupDTO">
+		SELECT
+		JOB_NUMBER AS jobNumber,
+		JOB_NAME AS jobName
+		FROM TBL_JOB_GROUP
+		ORDER BY JOB_NUMBER
+	</select>
 </mapper>
