@@ -14,7 +14,7 @@
 
 	<%-- post-list.jsp와 동일한 세션 방식으로 통일 --%>
 	<c:set var="isLoggedIn"
-		value="${not empty sessionScope.user or not empty sessionScope.userNumber}" />
+		value="${not empty sessionScope.userNumber or not empty sessionScope.userNumber}" />
 
 	<c:choose>
 		<c:when test="${not empty sessionScope.userNumber}">
