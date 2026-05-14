@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // 3. 폼 제출(확인 버튼) 시 필수 체크 확인
   formMem.addEventListener('submit', function(event) {
-    
+    event.preventDefault();
+	
     let isAllChecked = true;
     reqCheckboxesMem.forEach(function(checkbox) {
       if (!checkbox.checked) {
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       // 모두 체크되었을 때, 실제 일반 회원가입 입력 페이지로 연결
       window.location.href = contextPath + "/member/signup-member.mefc"; 
+	  
     }
   });
 });
