@@ -50,7 +50,7 @@
                         <ul class="dropdown-menu community-menu">
                             <li><a href="${pageContext.request.contextPath}/post/list.pfc">자유게시판</a></li>
                             <li><a href="${pageContext.request.contextPath}/qna/list.qfc">기업QnA</a></li>
-                            <li><a href="${pageContext.request.contextPath}/expo/expoList.efc">박람회일정</a></li>
+                            <li><a href="${pageContext.request.contextPath}/expo/calendar.efc">박람회일정</a></li>
                         </ul>
                     </li>
                 </ul>
